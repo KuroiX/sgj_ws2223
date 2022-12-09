@@ -11,14 +11,22 @@ public class Key : MonoBehaviour
     private KeyControl identifier;
     private bool pressed;
 
+    private void Update()
+    {
+        if (identifier.wasPressedThisFrame)
+        {
+            pressed = true;
+        }
+
+        if (identifier.wasReleasedThisFrame)
+        {
+            pressed = false;
+        }
+    }
+
     public Key (KeyControl identifier)
     {
         this.identifier = identifier;
-    }
-
-    private void CheckPressed()
-    {
-        
     }
 
 
