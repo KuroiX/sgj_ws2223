@@ -1,15 +1,26 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
     
+    #region Constants
+    
     [SerializeField]
-    private char[] tasks;
+    private GenericTask[] tasks;   // task sequence
     [SerializeField]
     private float[] timestampsSeconds;
+    
+    #endregion
+    
+    #region Variabes
 
+    private List<GenericTask> _activeTasks;
     private uint _currentTaskIndex;
+
+    #endregion
     
     private void Start()
     {
@@ -19,14 +30,19 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        
-        
-        
+
+        foreach (GenericTask task in _activeTasks)
+        {
+            // task. process update
+        }
+
     }
 
     private IEnumerator Delay()
     {
-        StartTask(tasks[_currentTaskIndex]);
+        GenericTask currentTask = tasks[_currentTaskIndex];
+        _activeTasks.Add(currentTask);
+        StartTask(currentTask);
         
         if (_currentTaskIndex + 1 < timestampsSeconds.Length)
         {
@@ -43,7 +59,7 @@ public class GameController : MonoBehaviour
     
     #region dummy functions
 
-    private void StartTask(char task)
+    private void StartTask(GenericTask task)
     {
         Debug.Log("Started Task \"" + task + "\"");
     }
