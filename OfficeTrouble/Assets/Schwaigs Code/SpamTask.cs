@@ -14,6 +14,7 @@ public class SpamTask : GenericTask
     // Update is called once per frame
     public override void OnUncompleted()
     {
+        // ToDo: Implement penalty logic
         Debug.Log("Task: Penalty applied! Penalty value: "+ PenaltyValue);
     }
 
@@ -22,7 +23,7 @@ public class SpamTask : GenericTask
         return _numberPressed >= SpamNumber;
     }
 
-    public override void SpecificUpdate()
+    protected override void SpecificUpdate()
     {
         // Nothing to be done here
     }

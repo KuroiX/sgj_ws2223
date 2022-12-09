@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GenericTask : MonoBehaviour, ITask
+public abstract class GenericTask : ScriptableObject, ITask
 {
     // Private Variables
     // Screen Coordinates
@@ -21,13 +21,14 @@ public abstract class GenericTask : MonoBehaviour, ITask
     private bool _taskActive = false;
     private bool _taskFulfilled;
 
+    // Public Methods
     public abstract void OnUncompleted();
 
     public abstract bool CheckTaskFulfilled();
 
-    public abstract void SpecificUpdate();
+    protected abstract void SpecificUpdate();
 
-    public void Update()
+    public void ProcessUpdate()
     {
         // Check if Task is active
         if (!_taskActive) return;
@@ -37,7 +38,11 @@ public abstract class GenericTask : MonoBehaviour, ITask
         
         // Check if Task is fulfilled
         _taskFulfilled = CheckTaskFulfilled();
-        
+        if (_taskFulfilled)
+        {
+            EndTask();
+            return;
+        }
         // Penalty logic
         _timePassed += Time.deltaTime;
         if (_timePassed >= TickInterval)
@@ -52,13 +57,20 @@ public abstract class GenericTask : MonoBehaviour, ITask
         _taskActive = true;
         _timePassed = -TimeBeforeFirstTick;
     }
+    
+    public abstract void OnKeyPressed();
 
+    public abstract void OnKeyUnpressed();
+    
+    // Intern Methods
     protected void ResetTimer()
     {
         _timePassed = 0.0f;
     }
 
-    public abstract void OnKeyPressed();
-
-    public abstract void OnKeyUnpressed();
+    protected void EndTask()
+    {
+        _taskActive = false;
+        _taskFulfilled = false;
+    }
 }
