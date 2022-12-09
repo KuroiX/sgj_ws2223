@@ -1,7 +1,14 @@
+#region Regions
+
+#region Imports
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+
+#endregion
+
+#region Classes
 
 public class GameController : MonoBehaviour
 {
@@ -22,6 +29,8 @@ public class GameController : MonoBehaviour
 
     #endregion
     
+    #region Event Functions
+    
     private void Start()
     {
         _currentTaskIndex = 0;
@@ -33,16 +42,20 @@ public class GameController : MonoBehaviour
 
         foreach (GenericTask task in _activeTasks)
         {
-            // task. process update
+            task.ProcessUpdate();
         }
 
     }
 
+    #endregion
+    
+    #region Coroutines
+    
     private IEnumerator Delay()
     {
         GenericTask currentTask = tasks[_currentTaskIndex];
         _activeTasks.Add(currentTask);
-        StartTask(currentTask);
+        currentTask.StartTask();
         
         if (_currentTaskIndex + 1 < timestampsSeconds.Length)
         {
@@ -56,6 +69,7 @@ public class GameController : MonoBehaviour
         
     }
     
+    #endregion
     
     #region dummy functions
 
@@ -67,3 +81,7 @@ public class GameController : MonoBehaviour
     #endregion
 
 }
+
+#endregion
+
+#endregion
