@@ -13,6 +13,7 @@ public class HoldTask : GenericTask
     
     public override void OnUncompleted()
     {
+        // ToDo: Implement penalty logic
         Debug.Log("Task: Penalty applied! Penalty value: "+ PenaltyValue);
     }
 
@@ -21,7 +22,7 @@ public class HoldTask : GenericTask
         return _taskFulfilled;
     }
 
-    public override void SpecificUpdate()
+    protected override void SpecificUpdate()
     {
         if (_keyState)
         {
