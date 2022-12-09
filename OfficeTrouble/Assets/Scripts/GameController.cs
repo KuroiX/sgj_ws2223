@@ -71,15 +71,6 @@ public class GameController : MonoBehaviour
     
     #endregion
     
-    #region dummy functions
-
-    private void StartTask(GenericTask task)
-    {
-        Debug.Log("Started Task \"" + task + "\"");
-    }
-
-    #endregion
-
 }
 
 #endregion
