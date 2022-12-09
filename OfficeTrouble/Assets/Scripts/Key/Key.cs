@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
-public class Key : MonoBehaviour
+public class Key
 {
     [SerializeField]
     private GameObject visual;
     private KeyControl identifier;
     private bool pressed;
 
-    private void Update()
+    public Key(KeyControl identifier)
+    {
+        this.identifier = identifier;
+    }
+
+    public void ProcessKey()
     {
         if (identifier.wasPressedThisFrame)
         {
@@ -23,12 +27,6 @@ public class Key : MonoBehaviour
             pressed = false;
         }
     }
-
-    public Key (KeyControl identifier)
-    {
-        this.identifier = identifier;
-    }
-
 
     public bool GetPressed()
     {
