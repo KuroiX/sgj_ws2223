@@ -174,9 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: a
-  timeBeforeFirstTick: 1
-  tickInterval: 0.5
-  penaltyValue: 10
+  initalDelaySeconds: 2
+  stressIncrementPerTick: 0.05
   holdDuration: 2
 --- !u!1 &103474641941572163
 GameObject:

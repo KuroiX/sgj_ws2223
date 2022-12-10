@@ -53,10 +53,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: b
-  timeBeforeFirstTick: 1
-  tickInterval: 0.5
-  penaltyValue: 10
-  spamNumber: 10
+  initalDelaySeconds: 2
+  stressIncrementPerTick: 0.05
+  numberToPress: 10
+  allowedSecondBetweenPresses: 0.05
 --- !u!1 &5748416343743189106
 GameObject:
   m_ObjectHideFlags: 0
