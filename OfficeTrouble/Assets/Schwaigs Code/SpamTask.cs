@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.WebSockets;
 using UnityEngine;
 
 public class SpamTask : GenericTask
@@ -14,6 +14,7 @@ public class SpamTask : GenericTask
     // Update is called once per frame
     public override void OnUncompleted()
     {
+        // ToDo: Implement penalty logic
         Debug.Log("Task: Penalty applied! Penalty value: "+ PenaltyValue);
     }
 
@@ -22,17 +23,18 @@ public class SpamTask : GenericTask
         return _numberPressed >= SpamNumber;
     }
 
-    public override void SpecificUpdate()
+    protected override void SpecificUpdate()
     {
         // Nothing to be done here
     }
 
-    public override void OnKeyPressed()
+    public override void OnKeyPressed(object sender, EventArgs args)
     {
+        Debug.Log("Key pressed " + ButtonValue);
         _numberPressed++;
     }
 
-    public override void OnKeyUnpressed()
+    public override void OnKeyUnpressed(object sender, EventArgs args)
     {
         // Nothing to be done here
     }

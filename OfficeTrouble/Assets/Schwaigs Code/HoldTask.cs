@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class HoldTask : GenericTask
     
     public override void OnUncompleted()
     {
+        // ToDo: Implement penalty logic
         Debug.Log("Task: Penalty applied! Penalty value: "+ PenaltyValue);
     }
 
@@ -21,7 +23,7 @@ public class HoldTask : GenericTask
         return _taskFulfilled;
     }
 
-    public override void SpecificUpdate()
+    protected override void SpecificUpdate()
     {
         if (_keyState)
         {
@@ -33,12 +35,13 @@ public class HoldTask : GenericTask
         }
     }
 
-    public override void OnKeyPressed()
+    public override void OnKeyPressed(object sender, EventArgs args)
     {
+        Debug.Log("Key pressed " + ButtonValue);
         _keyState = true;
     }
 
-    public override void OnKeyUnpressed()
+    public override void OnKeyUnpressed(object sender, EventArgs args)
     {
         _keyState = false;
         _timeSinceHold = 0.0f;
