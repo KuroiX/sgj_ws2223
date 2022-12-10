@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -88,3 +88,4 @@ public class SequentialTask : GenericTask
         GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.GetUIText().ToUpper();
     }
 }
+*/

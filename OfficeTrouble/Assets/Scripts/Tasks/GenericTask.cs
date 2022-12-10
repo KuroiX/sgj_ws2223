@@ -5,7 +5,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 {
     // GameLogic
     
-    [SerializeField] protected string keyName;
+    [SerializeField] protected KeyWrapper key;
     [SerializeField] protected float initalDelaySeconds;
     [SerializeField] protected float stressIncrementPerTick;
 
@@ -17,8 +17,6 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private float _passedSecondsSinceStart;
     private float _taskProgress;
     private bool _lastKeyState;
-    protected float _taskProgress;
-    protected KeyWrapper _currentKey;
 
     #region Abstract Methods
 
@@ -61,7 +59,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     private void HandleKeyState()
     {
-        bool newKeyState = InputManager.Instance.KeyIsPressed(_currentKey.GetKeyCode());
+        bool newKeyState = InputManager.Instance.KeyIsPressed(key.GetKeyCode());
         if (newKeyState && !_lastKeyState)
         {
             OnKeyPressed();
@@ -75,11 +73,6 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         _lastKeyState = newKeyState;
     }
 
-    public string GetKeyName()
-    {
-        return _currentKey.GetUIText();
-    }
-
     public bool GetTaskFulfilled()
     {
         return TaskFulfilled;
@@ -90,9 +83,14 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         return TaskIsBeingDealtWith;
     }
 
+	public string GetKeyName()
+	{
+		return key.GetUIText();
+	}
+
     public string GetKeyValue()
     {
-        return _currentKey.GetKeyCode();
+        return key.GetKeyCode();
     }
 
     public event Action<float> ValueChanged;
