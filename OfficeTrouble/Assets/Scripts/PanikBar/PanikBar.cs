@@ -14,6 +14,8 @@ public class PanikBar : MonoBehaviour
     [SerializeField]
     private Slider slider;
 
+    private IValueChanged valueChangedEvent;
+
     private void Update()
     {
         fillValue += 0.0001f;
@@ -22,10 +24,6 @@ public class PanikBar : MonoBehaviour
 
     public void ChangeFill(float amount)
     {
-        if(amount >= 1)
-        {
-            // Player has lost
-        }
 
         slider.value = fillValue;
 
@@ -37,10 +35,21 @@ public class PanikBar : MonoBehaviour
         {
             sliderImage.color = Color.Lerp(Color.green, Color.red, fillValue / 1);
         }
+
     }
 
-    public void Register()
+    public void Register(IValueChanged value)
     {
+        valueChangedEvent = value;
+        valueChangedEvent.ValueChanged += ChangeFill;
+    }
+
+    public void OnDestroy()
+    {
+        if(valueChangedEvent != null)
+        {
+            valueChangedEvent.ValueChanged -= ChangeFill;
+        }
 
     }
 
