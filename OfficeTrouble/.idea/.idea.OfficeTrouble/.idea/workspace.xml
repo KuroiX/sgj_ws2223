@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20587bfb-1e6c-4a75-856c-a871d7e83635" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/KeyAlert.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/KeyAlert.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateHoldTask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateHoldTask.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/Sequence#1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/Sequence#1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sequence.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/orange.png.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateTasks.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateNewSpamTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateHoldTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Ih1fua7HZ52Ptlk3K7ksKb0QIQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="" />
+      <created>1670619112931</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670619112931</updated>
+      <workItem from="1670619125260" duration="13612000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="685" y="263" key="RiderGenerateDialog" timestamp="1670622770751">
+      <screen x="0" y="25" width="1792" height="1034" />
+    </state>
+    <state x="685" y="263" key="RiderGenerateDialog/0.25.1792.1034@0.25.1792.1034" timestamp="1670622770751" />
+  </component>
+</project>
