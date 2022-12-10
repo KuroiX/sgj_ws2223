@@ -173,10 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2638d47eabe3c42b493f5f465ab92f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeFirstTick: 1
-  tickInterval: 0.5
-  penaltyValue: 10
-  KeyWrapper: {fileID: 11400000, guid: 56a616e5bb7d64d9eab7c82ac8b004c6, type: 2}
+  keyName: a
+  initalDelaySeconds: 2
+  stressIncrementPerTick: 0.05
   holdDuration: 2
 --- !u!1 &103474641941572163
 GameObject:

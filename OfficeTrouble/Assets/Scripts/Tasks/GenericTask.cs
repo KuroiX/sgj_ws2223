@@ -4,62 +4,61 @@ using UnityEngine;
 public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 {
     // GameLogic
-    //[SerializeField] protected string keyName;
-    [SerializeField] protected float timeBeforeFirstTick = 1.0f;
-    [SerializeField] protected float tickInterval = 0.5f;
-    [SerializeField] protected int penaltyValue = 10;
+    
+    [SerializeField] protected string keyName;
+    [SerializeField] protected float initalDelaySeconds;
+    [SerializeField] protected float stressIncrementPerTick;
+
+    protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
+    
+    private StressMeter _stressMeter;
+    private bool _initialDelayOver;
+    private float _passedSecondsSinceStart;
+    private float _taskProgress;
     private bool _lastKeyState;
     protected float _taskProgress;
     protected KeyWrapper _currentKey;
 
     #region Abstract Methods
-    
+
     protected abstract void SpecificUpdate();
 
-    protected abstract void SpecificAwake();
-    
-    public abstract bool CheckTaskFulfilled();
-    
-    public abstract void OnPenalty();
-    
-    public abstract void OnKeyPressed();
-
-    public abstract void OnKeyUnpressed();
-
     protected abstract float CalculateTaskProgress();
-    
+
+    protected abstract void OnKeyPressed();
+
+    protected abstract void OnKeyUnpressed();
+
     #endregion
 
-    public void Awake()
+    private void Start()
     {
-        SpecificAwake();
+        _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
     }
+
     public void Update()
     {
-        // Check the key state
         HandleKeyState();
+
+        if (!_initialDelayOver)
+        {
+            _passedSecondsSinceStart += Time.deltaTime;
+            if (_passedSecondsSinceStart > initalDelaySeconds)
+                _initialDelayOver = true;
+        }
         
-        // Execute Task-specific logic
         SpecificUpdate();
         
-        // Calculate Task progress
-        float oldProgress = _taskProgress;
-        _taskProgress = CalculateTaskProgress();
-        if (_taskProgress != oldProgress)
-        {
-            taskProgress = _taskProgress;
-        }
-        //ValueChanged?.Invoke(_taskProgress);
-        
-        // Check if Task is fulfilled
-        TaskFulfilled = CheckTaskFulfilled();
-        if (TaskFulfilled)
-        {
-            Destroy(gameObject);
-        }
+        TaskProgress = CalculateTaskProgress();
     }
     
+    private void FixedUpdate()
+    {
+        if (_initialDelayOver && !TaskIsBeingDealtWith)
+            _stressMeter.IncreaseStressLevel(stressIncrementPerTick);
+    }
+
     private void HandleKeyState()
     {
         bool newKeyState = InputManager.Instance.KeyIsPressed(_currentKey.GetKeyCode());
@@ -81,6 +80,16 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         return _currentKey.GetUIText();
     }
 
+    public bool GetTaskFulfilled()
+    {
+        return TaskFulfilled;
+    }
+
+    public bool GetTaskIsBeingDealtWith()
+    {
+        return TaskIsBeingDealtWith;
+    }
+
     public string GetKeyValue()
     {
         return _currentKey.GetKeyCode();
@@ -88,14 +97,14 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     public event Action<float> ValueChanged;
     
-    private float taskProgress
+    private float TaskProgress
     {
         get => _taskProgress;
         set
         {
-            
             ValueChanged?.Invoke(value);
             _taskProgress = value;
         }
     }
+
 }

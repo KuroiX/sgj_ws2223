@@ -52,11 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6348966f1524fe1ba0e3bff2cd546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeFirstTick: 1
-  tickInterval: 0.5
-  penaltyValue: 10
-  KeyWrapper: {fileID: 11400000, guid: 311db2384c0ea467fa6288d84dd61b62, type: 2}
-  spamNumber: 10
+  keyName: b
+  initalDelaySeconds: 2
+  stressIncrementPerTick: 0.05
+  numberToPress: 10
+  allowedSecondBetweenPresses: 0.05
 --- !u!1 &5748416343743189106
 GameObject:
   m_ObjectHideFlags: 0
