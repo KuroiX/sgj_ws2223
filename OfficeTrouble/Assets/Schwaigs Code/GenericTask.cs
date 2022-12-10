@@ -16,21 +16,32 @@ public abstract class GenericTask : ScriptableObject, ITask
     //private Key _key;
     
     // GameLogic
-    [SerializeField] private float TickInterval = 0.5f;
-    [SerializeField] private float TimeBeforeFirstTick = 1.0f;
+    [SerializeField] protected float TickInterval = 0.5f;
+    [SerializeField] protected float TimeBeforeFirstTick = 1.0f;
     [SerializeField] protected int PenaltyValue = 10;
     [SerializeField] protected String ButtonValue;
-    private float _timePassed;
     private bool _taskActive = false;
     protected bool _taskFulfilled;
-    private bool _lastKeyState;
+    private bool _lastKeyState = false;
 
-    // Public Methods
-    public abstract void OnUncompleted();
+    #region Abstract Methods
+
+    public abstract void OnPenalty();
 
     public abstract bool CheckTaskFulfilled();
 
     protected abstract void SpecificUpdate();
+    
+    public abstract void OnKeyPressed();
+
+    public abstract void OnKeyUnpressed();
+
+    protected abstract void SpecificReset();
+
+    protected abstract void SpecificStart();
+
+    #endregion
+    
 
     public void ProcessUpdate()
     {
@@ -50,33 +61,14 @@ public abstract class GenericTask : ScriptableObject, ITask
             EndTask();
             return;
         }
-        // Penalty logic
-        _timePassed += Time.deltaTime;
-        if (_timePassed >= TickInterval)
-        {
-            _timePassed -= TickInterval;
-            OnUncompleted();
-        }
     }
 
     public void StartTask()
     {
         SpecificReset();
+        SpecificStart();
         _taskFulfilled = false;
         _taskActive = true;
-        _timePassed = -TimeBeforeFirstTick;
-    }
-
-    public abstract void OnKeyPressed();
-
-    public abstract void OnKeyUnpressed();
-
-    protected abstract void SpecificReset();
-    
-    // Intern Methods
-    protected void ResetTimer()
-    {
-        _timePassed = 0.0f;
     }
 
     protected void EndTask()
