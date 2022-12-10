@@ -37,8 +37,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         SpecificUpdate();
         
         // Calculate Task progress
-        _taskProgress = CalculateTaskProgress();
-        ValueChanged?.Invoke(_taskProgress);
+        taskProgress = CalculateTaskProgress();
+        //ValueChanged?.Invoke(_taskProgress);
         
         // Check if Task is fulfilled
         TaskFulfilled = CheckTaskFulfilled();
@@ -76,6 +76,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         get => _taskProgress;
         set
         {
+            
             ValueChanged?.Invoke(value);
             _taskProgress = value;
         }
