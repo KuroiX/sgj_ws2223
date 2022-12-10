@@ -43,8 +43,7 @@ public class HoldTask : GenericTask
 
     protected override void SpecificAwake()
     {
-        _currentKey = KeyWrapper.GetKeyCode();
-        _UIKey = KeyWrapper.GetUIText();
+        _currentKey = KeyWrapper;
     }
 
     public override bool CheckTaskFulfilled()

@@ -40,8 +40,7 @@ public class SequentialTask : GenericTask
             _keys[i] = KeyWrappers[i];
         }
 
-        _currentKey = _keys[_currentPosition].GetKeyCode();
-        _UIKey = _keys[_currentPosition].GetUIText();
+        _currentKey = _keys[_currentPosition];
     }
 
     public override bool CheckTaskFulfilled()
@@ -70,10 +69,9 @@ public class SequentialTask : GenericTask
         }
         else
         {
-            _currentKey = _keys[_currentPosition].GetKeyCode();
-            _UIKey = _keys[_currentPosition].GetUIText();
+            _currentKey = _keys[_currentPosition];
             _timeSincePenalty = -tickInterval;
-            GetComponentInChildren<TextMeshProUGUI>().text = _UIKey.ToUpper();
+            GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.GetUIText().ToUpper();
         }
         
     }
@@ -86,8 +84,7 @@ public class SequentialTask : GenericTask
     private void ResetSequence()
     {
         _currentPosition = 0;
-        _currentKey = _keys[_currentPosition].GetKeyCode();
-        _UIKey = _keys[_currentPosition].GetUIText();
-        GetComponentInChildren<TextMeshProUGUI>().text = _UIKey.ToUpper();
+        _currentKey = _keys[_currentPosition];
+        GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.GetUIText().ToUpper();
     }
 }

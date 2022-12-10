@@ -29,8 +29,7 @@ public class SpamTask : GenericTask
 
     protected override void SpecificAwake()
     {
-        _currentKey = KeyWrapper.GetKeyCode();
-        _UIKey = KeyWrapper.GetUIText();
+        _currentKey = KeyWrapper;
     }
 
     public override bool CheckTaskFulfilled()

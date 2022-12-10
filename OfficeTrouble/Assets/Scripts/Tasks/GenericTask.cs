@@ -11,8 +11,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     protected bool TaskFulfilled;
     private bool _lastKeyState;
     protected float _taskProgress;
-    protected string _currentKey;
-    protected string _UIKey;
+    protected KeyWrapper _currentKey;
 
     #region Abstract Methods
     
@@ -63,7 +62,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     
     private void HandleKeyState()
     {
-        bool newKeyState = InputManager.Instance.KeyIsPressed(_currentKey);
+        bool newKeyState = InputManager.Instance.KeyIsPressed(_currentKey.GetKeyCode());
         if (newKeyState && !_lastKeyState)
         {
             OnKeyPressed();
@@ -79,12 +78,12 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     public string GetKeyName()
     {
-        return _UIKey;
+        return _currentKey.GetUIText();
     }
 
     public string GetKeyValue()
     {
-        return _currentKey;
+        return _currentKey.GetKeyCode();
     }
 
     public event Action<float> ValueChanged;
