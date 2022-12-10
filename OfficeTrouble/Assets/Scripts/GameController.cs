@@ -4,6 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 #endregion
@@ -15,17 +16,13 @@ public class GameController : MonoBehaviour
     
     #region Constants
     
-    [SerializeField]
-    private GenericTask[] tasks;   // task sequence
-    [SerializeField]
-    private float[] timestampsSeconds;
-    
-    #endregion
-    
-    #region Variabes
+    [SerializeField] private GenericTask[] tasks;   // task sequence
+    [SerializeField] private float[] timestampsSeconds;
+    [SerializeField] private GameObject textPrefab;
 
-    private List<GenericTask> _activeTasks;
     private uint _currentTaskIndex;
+    private List<GenericTask> _activeTasks;
+    private List<GameObject> _activeKeyAlerts;
 
     #endregion
     
@@ -56,6 +53,7 @@ public class GameController : MonoBehaviour
         GenericTask currentTask = tasks[_currentTaskIndex];
         _activeTasks.Add(currentTask);
         currentTask.StartTask();
+        ShowKeyAlert(currentTask);
         
         if (_currentTaskIndex + 1 < timestampsSeconds.Length)
         {
@@ -66,9 +64,21 @@ public class GameController : MonoBehaviour
         }
         else
             Debug.Log("Wohoo you completed the sequence");
-        
     }
     
+    #endregion
+    
+    #region Helper Functions
+    
+    private void ShowKeyAlert(GenericTask task)
+    {
+
+        GameObject newText = Instantiate(textPrefab, new Vector3(task.GetXCoord(), task.GetYCoord(), 0f), Quaternion.identity);
+        newText.GetComponent<TextMeshPro>().text = task.GetKeyValue();
+        _activeKeyAlerts.Add(newText);
+
+    }
+
     #endregion
     
 }
