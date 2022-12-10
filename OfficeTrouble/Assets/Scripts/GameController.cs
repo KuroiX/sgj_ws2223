@@ -4,6 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -15,12 +16,12 @@ public class GameController : MonoBehaviour
 {
     
     #region Constants
-    
-    [SerializeField] private GenericTask[] tasks;   // task sequence
-    [SerializeField] private float[] timestampsSeconds;
-    [SerializeField] private GameObject textPrefab;
 
-    private uint _currentTaskIndex;
+    [SerializeField] private Sequence sequence;
+    [SerializeField] private GameObject textPrefab;
+    [SerializeField] private Transform canvasTransform;
+    
+    private int _currentTaskIndex;
     private List<GenericTask> _activeTasks;
     private List<GameObject> _activeKeyAlerts;
 
@@ -31,11 +32,34 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         _currentTaskIndex = 0;
-        StartCoroutine(ActivateNextTask());
+        _activeTasks = new List<GenericTask>();
+        _activeKeyAlerts = new List<GameObject>();
+       //StartCoroutine(ActivateNextTask());
+       
+       
+       if (sequence.tasks.Count > 0)
+       {
+           TaskSchedule currentTaskSchedule = sequence.tasks.ElementAt(_currentTaskIndex);
+           _activeTasks.Add(currentTaskSchedule.task);
+           currentTaskSchedule.task.StartTask();
+           ShowKeyAlert(currentTaskSchedule.task);
+            
+           if (_currentTaskIndex + 1 < sequence.tasks.Count)
+           {
+               float delaySeconds = sequence.tasks[_currentTaskIndex + 1].timeStamp - sequence.tasks[_currentTaskIndex].timeStamp;
+               //yield return new WaitForSeconds(delaySeconds);
+               _currentTaskIndex++;
+               StartCoroutine(ActivateNextTask());
+           }
+           else
+               Debug.Log("Wohoo you completed the sequence");
+       }
     }
 
     private void Update()
     {
+        
+        
 
         foreach (GenericTask task in _activeTasks)
         {
@@ -50,20 +74,23 @@ public class GameController : MonoBehaviour
     
     private IEnumerator ActivateNextTask()
     {
-        GenericTask currentTask = tasks[_currentTaskIndex];
-        _activeTasks.Add(currentTask);
-        currentTask.StartTask();
-        ShowKeyAlert(currentTask);
-        
-        if (_currentTaskIndex + 1 < timestampsSeconds.Length)
+        if (sequence.tasks.Count > 0)
         {
-            float delaySeconds = timestampsSeconds[_currentTaskIndex + 1] - timestampsSeconds[_currentTaskIndex];
-            yield return new WaitForSeconds(delaySeconds);
-            _currentTaskIndex++;
-            StartCoroutine(ActivateNextTask());
+            TaskSchedule currentTaskSchedule = sequence.tasks.ElementAt(_currentTaskIndex);
+            _activeTasks.Add(currentTaskSchedule.task);
+            currentTaskSchedule.task.StartTask();
+            ShowKeyAlert(currentTaskSchedule.task);
+            
+            if (_currentTaskIndex + 1 < sequence.tasks.Count)
+            {
+                float delaySeconds = sequence.tasks[_currentTaskIndex + 1].timeStamp - sequence.tasks[_currentTaskIndex].timeStamp;
+                yield return new WaitForSeconds(delaySeconds);
+                _currentTaskIndex++;
+                StartCoroutine(ActivateNextTask());
+            }
+            else
+                Debug.Log("Wohoo you completed the sequence");
         }
-        else
-            Debug.Log("Wohoo you completed the sequence");
     }
     
     #endregion
@@ -72,11 +99,10 @@ public class GameController : MonoBehaviour
     
     private void ShowKeyAlert(GenericTask task)
     {
-
         GameObject newText = Instantiate(textPrefab, new Vector3(task.GetXCoord(), task.GetYCoord(), 0f), Quaternion.identity);
-        newText.GetComponent<TextMeshPro>().text = task.GetKeyValue();
+        newText.transform.parent = canvasTransform;
+        newText.GetComponent<TextMeshProUGUI>().text = task.GetKeyValue();
         _activeKeyAlerts.Add(newText);
-
     }
 
     #endregion
