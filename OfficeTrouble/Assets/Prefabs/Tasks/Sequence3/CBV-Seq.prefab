@@ -190,7 +190,10 @@ MonoBehaviour:
   timeBeforeFirstTick: 1
   tickInterval: 0.7
   penaltyValue: 10
-  keySequence: CBV
+  KeyWrappers:
+  - {fileID: 11400000, guid: bbef0282e249442b5a548dbe5b720acb, type: 2}
+  - {fileID: 11400000, guid: 311db2384c0ea467fa6288d84dd61b62, type: 2}
+  - {fileID: 11400000, guid: 62f8b5231747b4e0ca81e4bd30518a79, type: 2}
 --- !u!1 &3082351557017418555
 GameObject:
   m_ObjectHideFlags: 0

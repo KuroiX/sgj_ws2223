@@ -6,10 +6,13 @@ using UnityEngine;
 public class SequentialTask : GenericTask
 {
     // Additional Parameters
-    [SerializeField] protected string keySequence;
+    //[SerializeField] protected string keySequence;
+
+    [SerializeField]
+    protected List<KeyWrapper> KeyWrappers;
     
     // Internal parameters
-    private string[] _keys;
+    private KeyWrapper[] _keys;
     private int _sequenceLength;
     private int _currentPosition = 0;
     private bool _keyIsPressed = false;
@@ -30,15 +33,15 @@ public class SequentialTask : GenericTask
 
     protected override void SpecificAwake()
     {
-        _sequenceLength = keySequence.Length;
-        _keys = new string[_sequenceLength];
+        _sequenceLength = KeyWrappers.Count;
+        _keys = new KeyWrapper[_sequenceLength];
         for (int i = 0; i < _sequenceLength; i++)
         {
-            _keys[i] = keySequence[i].ToString();
+            _keys[i] = KeyWrappers[i];
         }
 
-        _currentKey = _keys[_currentPosition];
-        _UIKey = _currentKey;
+        _currentKey = _keys[_currentPosition].GetKeyCode();
+        _UIKey = _keys[_currentPosition].GetUIText();
     }
 
     public override bool CheckTaskFulfilled()
@@ -67,9 +70,10 @@ public class SequentialTask : GenericTask
         }
         else
         {
-            _currentKey = _keys[_currentPosition];
+            _currentKey = _keys[_currentPosition].GetKeyCode();
+            _UIKey = _keys[_currentPosition].GetUIText();
             _timeSincePenalty = -tickInterval;
-            GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.ToUpper();
+            GetComponentInChildren<TextMeshProUGUI>().text = _UIKey.ToUpper();
         }
         
     }
@@ -82,7 +86,8 @@ public class SequentialTask : GenericTask
     private void ResetSequence()
     {
         _currentPosition = 0;
-        _currentKey = _keys[_currentPosition];
-        GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.ToUpper();
+        _currentKey = _keys[_currentPosition].GetKeyCode();
+        _UIKey = _keys[_currentPosition].GetUIText();
+        GetComponentInChildren<TextMeshProUGUI>().text = _UIKey.ToUpper();
     }
 }

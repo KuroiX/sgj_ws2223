@@ -55,7 +55,7 @@ MonoBehaviour:
   timeBeforeFirstTick: 1
   tickInterval: 0.5
   penaltyValue: 10
-  keyToPress: B
+  KeyWrapper: {fileID: 11400000, guid: 311db2384c0ea467fa6288d84dd61b62, type: 2}
   spamNumber: 10
 --- !u!1 &5748416343743189106
 GameObject:

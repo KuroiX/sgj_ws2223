@@ -176,7 +176,7 @@ MonoBehaviour:
   timeBeforeFirstTick: 1
   tickInterval: 0.5
   penaltyValue: 10
-  keyToHold: A
+  KeyWrapper: {fileID: 11400000, guid: 56a616e5bb7d64d9eab7c82ac8b004c6, type: 2}
   holdDuration: 2
 --- !u!1 &103474641941572163
 GameObject:

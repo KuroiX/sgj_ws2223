@@ -190,7 +190,11 @@ MonoBehaviour:
   timeBeforeFirstTick: 3
   tickInterval: 2
   penaltyValue: 10
-  keySequence: ASDF
+  KeyWrappers:
+  - {fileID: 11400000, guid: 56a616e5bb7d64d9eab7c82ac8b004c6, type: 2}
+  - {fileID: 11400000, guid: a7a4ec2f6e3604c338c9af2940127f2d, type: 2}
+  - {fileID: 11400000, guid: 40588b66fc0f3434eb07e8d8005e2398, type: 2}
+  - {fileID: 11400000, guid: a9cf9267a412747d4936257d040490b0, type: 2}
 --- !u!1 &3082351557017418555
 GameObject:
   m_ObjectHideFlags: 0

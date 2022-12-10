@@ -190,8 +190,7 @@ MonoBehaviour:
   timeBeforeFirstTick: 1
   tickInterval: 0.5
   penaltyValue: 10
-  keyToHold: K
-  UIText: K
+  KeyWrapper: {fileID: 11400000, guid: 7be868d8c454a4aee9b67a7650bac808, type: 2}
   holdDuration: 10
 --- !u!1 &3082351557017418555
 GameObject:

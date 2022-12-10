@@ -190,8 +190,7 @@ MonoBehaviour:
   timeBeforeFirstTick: 1
   tickInterval: 0.5
   penaltyValue: 10
-  keyToPress: SPACE
-  UIText: Space
+  KeyWrapper: {fileID: 11400000, guid: 11384c88b9cdb4661a524049462314e1, type: 2}
   spamNumber: 6
 --- !u!1 &3082351557017418555
 GameObject:

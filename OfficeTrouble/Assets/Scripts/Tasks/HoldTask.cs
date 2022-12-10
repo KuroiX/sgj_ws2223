@@ -3,8 +3,9 @@ using UnityEngine;
 public class HoldTask : GenericTask
 {
     // Additional Parameter
-    [SerializeField] protected string keyToHold;
-    [SerializeField] protected string UIText;
+    //[SerializeField] protected string keyToHold;
+    //[SerializeField] protected string UIText;
+    [SerializeField] protected KeyWrapper KeyWrapper;
     [SerializeField] private float holdDuration = 6.0f;
 
     private bool _keyState;
@@ -42,8 +43,8 @@ public class HoldTask : GenericTask
 
     protected override void SpecificAwake()
     {
-        _currentKey = keyToHold;
-        _UIKey = UIText;
+        _currentKey = KeyWrapper.GetKeyCode();
+        _UIKey = KeyWrapper.GetUIText();
     }
 
     public override bool CheckTaskFulfilled()
