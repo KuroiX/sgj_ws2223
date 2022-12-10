@@ -4,18 +4,21 @@ using UnityEngine;
 public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 {
     // GameLogic
-    [SerializeField] protected string keyName;
+    //[SerializeField] protected string keyName;
     [SerializeField] protected float timeBeforeFirstTick = 1.0f;
     [SerializeField] protected float tickInterval = 0.5f;
     [SerializeField] protected int penaltyValue = 10;
     protected bool TaskFulfilled;
     private bool _lastKeyState;
     protected float _taskProgress;
+    protected string _currentKey;
 
     #region Abstract Methods
     
     protected abstract void SpecificUpdate();
 
+    protected abstract void SpecificAwake();
+    
     public abstract bool CheckTaskFulfilled();
     
     public abstract void OnPenalty();
@@ -27,7 +30,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     protected abstract float CalculateTaskProgress();
     
     #endregion
-    
+
+    public void Awake()
+    {
+        SpecificAwake();
+    }
     public void Update()
     {
         // Check the key state
@@ -37,7 +44,12 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         SpecificUpdate();
         
         // Calculate Task progress
-        taskProgress = CalculateTaskProgress();
+        float oldProgress = _taskProgress;
+        _taskProgress = CalculateTaskProgress();
+        if (_taskProgress != oldProgress)
+        {
+            taskProgress = _taskProgress;
+        }
         //ValueChanged?.Invoke(_taskProgress);
         
         // Check if Task is fulfilled
@@ -50,7 +62,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     
     private void HandleKeyState()
     {
-        bool newKeyState = InputManager.Instance.KeyIsPressed(keyName);
+        bool newKeyState = InputManager.Instance.KeyIsPressed(_currentKey);
         if (newKeyState && !_lastKeyState)
         {
             OnKeyPressed();
@@ -66,7 +78,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     public string GetKeyName()
     {
-        return keyName;
+        return _currentKey;
     }
 
     public event Action<float> ValueChanged;

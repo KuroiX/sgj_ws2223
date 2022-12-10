@@ -71,7 +71,8 @@ public class GameController : MonoBehaviour
 
         GameObject taskPrefab = currentTask.gameObject;
         GameObject taskGameObject = Instantiate(taskPrefab, canvasTransform);
-        taskGameObject.GetComponentInChildren<TextMeshProUGUI>().text = currentTask.GetKeyName().ToUpper();
+        //Debug.Log("KeyValue: "+taskGameObject.GetComponent<GenericTask>().GetKeyName().ToUpper());
+        taskGameObject.GetComponentInChildren<TextMeshProUGUI>().text = taskGameObject.GetComponent<GenericTask>().GetKeyName().ToUpper();
 
         if (_currentTaskIndex + 1 < sequence.tasks.Count)
         {

@@ -3,6 +3,7 @@ using UnityEngine;
 public class HoldTask : GenericTask
 {
     // Additional Parameter
+    [SerializeField] protected string keyToHold;
     [SerializeField] private float holdDuration = 6.0f;
 
     private bool _keyState;
@@ -38,6 +39,11 @@ public class HoldTask : GenericTask
         }
     }
 
+    protected override void SpecificAwake()
+    {
+        _currentKey = keyToHold;
+    }
+
     public override bool CheckTaskFulfilled()
     {
         return TaskFulfilled;
@@ -51,13 +57,13 @@ public class HoldTask : GenericTask
     
     public override void OnKeyPressed()
     {
-        Debug.Log("Key " + keyName + " pressed.");
+        Debug.Log("Key " + _currentKey + " pressed.");
         _keyState = true;
     }
 
     public override void OnKeyUnpressed()
     {
-        Debug.Log("Key "+keyName+" released.");
+        Debug.Log("Key "+_currentKey+" released.");
         _keyState = false;
     }
 

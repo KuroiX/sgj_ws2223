@@ -76,6 +76,7 @@
             <e p="HoldTask.cs" t="Include" />
             <e p="ITask.cs" t="Include" />
             <e p="Sequence.cs" t="Include" />
+            <e p="SequentialTask.cs" t="Include" />
             <e p="SpamTask.cs" t="Include" />
             <e p="TaskBar.cs" t="Include" />
             <e p="TestScript.cs" t="Include" />

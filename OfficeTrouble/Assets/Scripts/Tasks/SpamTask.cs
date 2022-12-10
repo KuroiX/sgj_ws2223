@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpamTask : GenericTask
 {
     // Additional Parameters
+    [SerializeField] protected string keyToPress;
     [SerializeField] private int spamNumber = 10;
 
     private int _numberPressed;
@@ -16,12 +17,17 @@ public class SpamTask : GenericTask
     protected override void SpecificUpdate()
     {
         _timeSincePenalty += Time.deltaTime;
-        /*// Penalty logic
+        // Penalty logic
         if (_timeSincePenalty >= 0)
         {
             OnPenalty();
             _timeSincePenalty =  _timeSincePenalty - tickInterval;
-        }*/
+        }
+    }
+
+    protected override void SpecificAwake()
+    {
+        _currentKey = keyToPress;
     }
 
     public override bool CheckTaskFulfilled()
@@ -42,7 +48,7 @@ public class SpamTask : GenericTask
         {
             TaskFulfilled = true;
         }
-        Debug.Log("Key " + keyName + " pressed " + _numberPressed + " times");
+        Debug.Log("Key " + _currentKey + " pressed " + _numberPressed + " times");
         
     }
 

@@ -187,10 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2638d47eabe3c42b493f5f465ab92f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyName: c
   timeBeforeFirstTick: 1
   tickInterval: 0.5
   penaltyValue: 10
+  keyToHold: C
   holdDuration: 4
 --- !u!1 &3082351557017418555
 GameObject:
