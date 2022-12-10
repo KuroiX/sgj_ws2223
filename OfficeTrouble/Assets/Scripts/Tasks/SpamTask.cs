@@ -4,6 +4,7 @@ public class SpamTask : GenericTask
 {
     // Additional Parameters
     [SerializeField] protected string keyToPress;
+    [SerializeField] protected string UIText;
     [SerializeField] private int spamNumber = 10;
 
     private int _numberPressed;
@@ -28,6 +29,7 @@ public class SpamTask : GenericTask
     protected override void SpecificAwake()
     {
         _currentKey = keyToPress;
+        _UIKey = UIText;
     }
 
     public override bool CheckTaskFulfilled()

@@ -4,6 +4,7 @@ public class HoldTask : GenericTask
 {
     // Additional Parameter
     [SerializeField] protected string keyToHold;
+    [SerializeField] protected string UIText;
     [SerializeField] private float holdDuration = 6.0f;
 
     private bool _keyState;
@@ -42,6 +43,7 @@ public class HoldTask : GenericTask
     protected override void SpecificAwake()
     {
         _currentKey = keyToHold;
+        _UIKey = UIText;
     }
 
     public override bool CheckTaskFulfilled()

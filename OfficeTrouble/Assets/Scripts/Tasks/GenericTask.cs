@@ -12,6 +12,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private bool _lastKeyState;
     protected float _taskProgress;
     protected string _currentKey;
+    protected string _UIKey;
 
     #region Abstract Methods
     
@@ -77,6 +78,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     }
 
     public string GetKeyName()
+    {
+        return _UIKey;
+    }
+
+    public string GetKeyValue()
     {
         return _currentKey;
     }

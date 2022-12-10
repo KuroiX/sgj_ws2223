@@ -38,6 +38,7 @@ public class SequentialTask : GenericTask
         }
 
         _currentKey = _keys[_currentPosition];
+        _UIKey = _currentKey;
     }
 
     public override bool CheckTaskFulfilled()
@@ -67,6 +68,7 @@ public class SequentialTask : GenericTask
         else
         {
             _currentKey = _keys[_currentPosition];
+            _timeSincePenalty = -tickInterval;
             GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.ToUpper();
         }
         
