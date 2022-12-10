@@ -28,14 +28,20 @@ public class SpamTask : GenericTask
         // Nothing to be done here
     }
 
-    public override void OnKeyPressed(object sender, EventArgs args)
+    public override void OnKeyPressed()
     {
-        Debug.Log("Key pressed " + ButtonValue);
+        Debug.Log("Key "+ButtonValue+" pressed " + _numberPressed +" times");
         _numberPressed++;
     }
 
-    public override void OnKeyUnpressed(object sender, EventArgs args)
+    public override void OnKeyUnpressed()
     {
         // Nothing to be done here
+    }
+
+    protected override void SpecificReset()
+    {
+        _numberPressed = 0;
+        _stateLastUpdate = false;
     }
 }
