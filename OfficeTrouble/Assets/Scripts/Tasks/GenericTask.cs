@@ -8,11 +8,14 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] protected KeyWrapper key;
     [SerializeField] protected float initalDelaySeconds;
     [SerializeField] protected float stressIncrementPerTick;
+    [SerializeField] private string spriteName;
+    
 
     protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
     
     private StressMeter _stressMeter;
+    private TaskSprite _taskSprite;
     private bool _initialDelayOver;
     private float _passedSecondsSinceStart;
     private float _taskProgress;
@@ -33,6 +36,15 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
+        _taskSprite = GameObject.Find(spriteName).GetComponent<TaskSprite>();
+        if (_taskSprite)
+        {
+            _taskSprite.Activate();
+        }
+        else
+        {
+            Debug.LogError("TaskSprite with name " + spriteName + " not found!!!!!!!!! Press f :(");
+        }
     }
 
     public void Update()
@@ -55,6 +67,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     {
         if (_initialDelayOver && !TaskIsBeingDealtWith)
             _stressMeter.IncreaseStressLevel(stressIncrementPerTick);
+    }
+
+    private void OnDestroy()
+    {
+        if (_taskSprite) _taskSprite.Deactivate();
     }
 
     private void HandleKeyState()
