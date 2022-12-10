@@ -5,7 +5,7 @@ using UnityEngine;
 public interface ITask
 {
 
-    public void OnUncompleted();
+    public void OnPenalty();
 
     public bool CheckTaskFulfilled();
 

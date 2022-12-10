@@ -10,9 +10,10 @@ public class SpamTask : GenericTask
 
     private int _numberPressed = 0;
     private bool _stateLastUpdate = false;
+    private float _timeSincePenalty;
 
     // Update is called once per frame
-    public override void OnUncompleted()
+    public override void OnPenalty()
     {
         // ToDo: Implement penalty logic
         Debug.Log("Task: Penalty applied! Penalty value: "+ PenaltyValue);
@@ -23,15 +24,26 @@ public class SpamTask : GenericTask
         return _numberPressed >= SpamNumber;
     }
 
+    protected override void SpecificStart()
+    {
+        _timeSincePenalty = -TimeBeforeFirstTick;
+    }
     protected override void SpecificUpdate()
     {
-        // Nothing to be done here
+        _timeSincePenalty += Time.deltaTime;
+        // Penalty logic
+        if (_timeSincePenalty >= 0)
+        {
+            OnPenalty();
+            _timeSincePenalty =  _timeSincePenalty - TickInterval;
+        }
     }
 
     public override void OnKeyPressed()
     {
-        Debug.Log("Key "+ButtonValue+" pressed " + _numberPressed +" times");
         _numberPressed++;
+        Debug.Log("Key "+ButtonValue+" pressed " + _numberPressed +" times");
+        
     }
 
     public override void OnKeyUnpressed()

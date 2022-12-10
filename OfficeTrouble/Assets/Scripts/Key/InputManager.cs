@@ -48,7 +48,7 @@ public class InputManager: MonoBehaviour
     public bool KeyIsPressed(string key)
     {
         bool uiKeyPressed = uiKeyPressedDict.ContainsKey(key) && uiKeyPressedDict[key];
-        return uiKeyPressed || ((KeyControl)Keyboard.current[key]).wasReleasedThisFrame;
+        return uiKeyPressed || ((KeyControl)Keyboard.current[key]).isPressed;
     }
 
 }

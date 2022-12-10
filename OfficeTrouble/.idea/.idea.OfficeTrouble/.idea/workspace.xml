@@ -42,16 +42,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateTasks.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateNewSpamTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateHoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
       </list>
     </option>
   </component>
@@ -96,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670619112931</updated>
-      <workItem from="1670619125260" duration="11518000" />
+      <workItem from="1670619125260" duration="13612000" />
     </task>
     <servers />
   </component>

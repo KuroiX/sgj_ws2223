@@ -10,8 +10,9 @@ public class HoldTask : GenericTask
 
     private float _timeSinceHold = 0.0f;
     private bool _keyState = false;
+    private float _timeSincePenalty;
     
-    public override void OnUncompleted()
+    public override void OnPenalty()
     {
         // ToDo: Implement penalty logic
         Debug.Log("Task: Penalty applied! Penalty value: "+ PenaltyValue);
@@ -28,6 +29,17 @@ public class HoldTask : GenericTask
         {
             _timeSinceHold += Time.deltaTime;
         }
+        else
+        {
+            _timeSinceHold = 0.0f;
+            _timeSincePenalty += Time.deltaTime;
+            if (_timeSincePenalty >= 0)
+            {
+                OnPenalty();
+                _timeSincePenalty = _timeSincePenalty - TickInterval;
+            }
+
+        }
         if (_timeSinceHold >= HoldDuration)
         {
             _taskFulfilled = true;
@@ -36,7 +48,7 @@ public class HoldTask : GenericTask
 
     public override void OnKeyPressed()
     {
-        Debug.Log("Key "+ButtonValue+"pressed.");
+        Debug.Log("Key "+ButtonValue+" pressed.");
         _keyState = true;
     }
 
@@ -51,5 +63,10 @@ public class HoldTask : GenericTask
         _timeSinceHold = 0.0f;
         _taskFulfilled = false;
         _keyState = false;
+    }
+
+    protected override void SpecificStart()
+    {
+        _timeSincePenalty = -TimeBeforeFirstTick;
     }
 }
