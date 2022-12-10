@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public abstract class GenericTask : MonoBehaviour, ITask
+public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 {
     // GameLogic
     [SerializeField] protected string keyName;
@@ -9,6 +10,7 @@ public abstract class GenericTask : MonoBehaviour, ITask
     [SerializeField] protected int penaltyValue = 10;
     protected bool TaskFulfilled;
     private bool _lastKeyState;
+    protected float _taskProgress;
 
     #region Abstract Methods
     
@@ -21,6 +23,8 @@ public abstract class GenericTask : MonoBehaviour, ITask
     public abstract void OnKeyPressed();
 
     public abstract void OnKeyUnpressed();
+
+    protected abstract float CalculateTaskProgress();
     
     #endregion
     
@@ -31,6 +35,10 @@ public abstract class GenericTask : MonoBehaviour, ITask
         
         // Execute Task-specific logic
         SpecificUpdate();
+        
+        // Calculate Task progress
+        _taskProgress = CalculateTaskProgress();
+        ValueChanged?.Invoke(_taskProgress);
         
         // Check if Task is fulfilled
         TaskFulfilled = CheckTaskFulfilled();
@@ -61,4 +69,15 @@ public abstract class GenericTask : MonoBehaviour, ITask
         return keyName;
     }
 
+    public event Action<float> ValueChanged;
+    
+    private float taskProgress
+    {
+        get => _taskProgress;
+        set
+        {
+            ValueChanged?.Invoke(value);
+            _taskProgress = value;
+        }
+    }
 }

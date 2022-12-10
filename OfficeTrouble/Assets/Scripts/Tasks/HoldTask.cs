@@ -24,12 +24,12 @@ public class HoldTask : GenericTask
         else
         {
             _timeSinceHold = 0.0f;
-            /*_timeSincePenalty += Time.deltaTime;
+            _timeSincePenalty += Time.deltaTime;
             if (_timeSincePenalty >= 0)
             {
                 OnPenalty();
                 _timeSincePenalty -= tickInterval;
-            }*/
+            }
         }
 
         if (_timeSinceHold >= holdDuration)
@@ -61,4 +61,8 @@ public class HoldTask : GenericTask
         _keyState = false;
     }
 
+    protected override float CalculateTaskProgress()
+    {
+        return _timeSinceHold / holdDuration;
+    }
 }
