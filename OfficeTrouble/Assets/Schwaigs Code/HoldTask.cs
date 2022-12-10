@@ -9,7 +9,6 @@ public class HoldTask : GenericTask
     [SerializeField] private float HoldDuration = 6.0f;
 
     private float _timeSinceHold = 0.0f;
-    private bool _taskFulfilled = false;
     private bool _keyState = false;
     
     public override void OnUncompleted()
@@ -35,15 +34,22 @@ public class HoldTask : GenericTask
         }
     }
 
-    public override void OnKeyPressed(object sender, EventArgs args)
+    public override void OnKeyPressed()
     {
-        Debug.Log("Key pressed " + ButtonValue);
+        Debug.Log("Key "+ButtonValue+"pressed.");
         _keyState = true;
     }
 
-    public override void OnKeyUnpressed(object sender, EventArgs args)
+    public override void OnKeyUnpressed()
     {
+        Debug.Log("Key "+ButtonValue+" released.");
         _keyState = false;
         _timeSinceHold = 0.0f;
+    }
+    protected override void SpecificReset()
+    {
+        _timeSinceHold = 0.0f;
+        _taskFulfilled = false;
+        _keyState = false;
     }
 }
