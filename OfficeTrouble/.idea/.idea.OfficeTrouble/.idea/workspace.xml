@@ -19,42 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20587bfb-1e6c-4a75-856c-a871d7e83635" name="Changes" comment="">
+    <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/KeyAlert.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/KeyAlert.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TaskBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TaskBar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task4 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task4 1.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateHoldTask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateHoldTask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/ITask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/Sequence#1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/Sequence#1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sequence.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sequence.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/orange.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PanikBar/PanikBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PanikBar/PanikBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StressMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StressMeter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +51,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5f/65a5572f/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cat/AnnoyingCatFace.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeyWrapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PanikBar/PanikBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -80,11 +74,20 @@
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/KeyWrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="2Ih1fua7HZ52Ptlk3K7ksKb0QIQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -124,7 +127,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670619112931</updated>
-      <workItem from="1670619125260" duration="13612000" />
+      <workItem from="1670619125260" duration="24665000" />
     </task>
     <servers />
   </component>
@@ -146,11 +149,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="685" y="263" key="RiderGenerateDialog" timestamp="1670622770751">
-      <screen x="0" y="25" width="1792" height="1034" />
-    </state>
-    <state x="685" y="263" key="RiderGenerateDialog/0.25.1792.1034@0.25.1792.1034" timestamp="1670622770751" />
   </component>
 </project>

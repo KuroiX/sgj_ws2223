@@ -1,35 +1,36 @@
-#region Regions
-
-#region Imports
-
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using TMPro;
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
-
-#endregion
-
-#region Classes
 
 public class GameController : MonoBehaviour
 {
     
-    #region Constants
+    #region Variables
+    
+    private const float StressDecayPerTick = 0.05f;
 
     [SerializeField] private Sequence sequence;
     [SerializeField] private RectTransform canvasTransform;
+    [SerializeField] private PanikBar panikBar;
+    
+    public StressMeter StressMeter;
     
     private List<GenericTask> _activeTasks;
     private int _currentTaskIndex;
+    private bool _allTasksAreBeingDealtWith;
 
     #endregion
     
     #region Event Functions
-    
+
+    private void Awake()
+    {
+        StressMeter = new StressMeter();
+        panikBar.Register(StressMeter);
+    }
+
     private void Start()
     {
         _activeTasks = new List<GenericTask>();
@@ -41,25 +42,35 @@ public class GameController : MonoBehaviour
     private void Update()
     {
 
+        List<GenericTask> tasksToRemove = new List<GenericTask>();
+        
+        _allTasksAreBeingDealtWith = true;
         foreach (GenericTask task in _activeTasks)
         {
-            if (task.CheckTaskFulfilled())
+            if (task.GetTaskFulfilled())
             {
-                _activeTasks.Remove(task);
-                Destroy(task.gameObject);
+                tasksToRemove.Add(task);
             }
-            
-            /*Debug.Log(task.CheckTaskFulfilled());
-            if (task.CheckTaskFulfilled())
-            {
-                Debug.Log("EY! TASK " + task + "DONE");
-                if (task.correspondingAlert)
-                    _activeKeyAlerts.Remove(task.correspondingAlert);
-                Destroy(task.correspondingAlert);
-                task.correspondingAlert = null;
-            }*/
+            else if (!task.GetTaskIsBeingDealtWith())
+                _allTasksAreBeingDealtWith = false;
         }
 
+        foreach (GenericTask task in tasksToRemove)
+        {
+            _activeTasks.Remove(task);
+            Destroy(task.gameObject);
+        }
+
+		if (StressMeter.IsGameLost())
+		{
+			Debug.Log("YOU LOST!");
+		}
+	}
+
+    private void FixedUpdate()
+    {
+        if (_allTasksAreBeingDealtWith)
+            StressMeter.DecreaseStressLevel(StressDecayPerTick);
     }
 
     #endregion
@@ -70,11 +81,11 @@ public class GameController : MonoBehaviour
     {
         TaskSchedule currentTaskSchedule = sequence.tasks.ElementAt(_currentTaskIndex);
         GenericTask currentTask = currentTaskSchedule.task;
-        _activeTasks.Add(currentTask);
 
-        GameObject taskPrefab = currentTask.gameObject;
-        GameObject taskGameObject = Instantiate(taskPrefab, canvasTransform);
-        taskGameObject.GetComponentInChildren<TextMeshProUGUI>().text = currentTask.GetKeyName().ToUpper();
+        GameObject currentTaskGameObject = Instantiate(currentTask.gameObject, canvasTransform);
+        currentTaskGameObject.GetComponentInChildren<TextMeshProUGUI>().text = currentTask.GetKeyName().ToUpper();
+        
+        _activeTasks.Add(currentTaskGameObject.GetComponent<GenericTask>());
 
         if (_currentTaskIndex + 1 < sequence.tasks.Count)
         {
@@ -84,26 +95,9 @@ public class GameController : MonoBehaviour
             StartCoroutine(ActivateNextTask());
         }
         else
-            Debug.Log("Wohoo you completed the sequence");
+            Debug.Log("sequence over");
     }
     
     #endregion
     
-    #region Helper Functions
-    
-    /*private void ShowKeyAlert(GenericTask task)
-    {
-        GameObject newText = Instantiate(textPrefab, canvasTransform);
-        newText.transform.position = new Vector3(task.GetXCoord() / 1.834862f, task.GetYCoord() / 1.834862f, 0f);   // no idea why this is multiplied with 1.834862 but i have to revert it
-        newText.GetComponent<TextMeshProUGUI>().text = task.GetKeyValue();
-        _activeKeyAlerts.Add(newText);
-        task.correspondingAlert = newText;
-    }*/
-
-    #endregion
-    
-}
-
-#endregion
-
-#endregion
+ }

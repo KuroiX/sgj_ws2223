@@ -11,7 +11,6 @@ public class PanikBar : MonoBehaviour
     private RectTransform sliderRecttrans;
     [SerializeField]
     bool panikBar;
-    private float fillValue = 0f;
 
     [SerializeField]
     private Slider slider;
@@ -20,18 +19,19 @@ public class PanikBar : MonoBehaviour
 
     public void ChangeFill(float amount)
     {
+        //Debug.Log("change fill: " + amount);
 
-        slider.value = fillValue;
+        slider.value = amount;
 
         if (panikBar)
         {
-            if (fillValue > 0.7)
+            if (amount > 0.75)
             {
-                sliderImage.color = Color.Lerp(Color.red, new Color(0.2f, 0, 0, 1), Mathf.PingPong(Time.time, 1f));
+                sliderImage.color = Color.Lerp(Color.red, new Color(0.67f, 0.67f, 0.67f, 1), Mathf.PingPong(Time.time, 1f));
             }
             else
             {
-                sliderImage.color = Color.Lerp(Color.green, Color.red, fillValue / 1);
+                sliderImage.color = Color.Lerp(Color.green, Color.red, amount / 1);
             }
         }
 
@@ -45,7 +45,7 @@ public class PanikBar : MonoBehaviour
 
     public void OnDestroy()
     {
-        if(valueChangedEvent != null)
+        if (valueChangedEvent != null)
         {
             valueChangedEvent.ValueChanged -= ChangeFill;
         }
