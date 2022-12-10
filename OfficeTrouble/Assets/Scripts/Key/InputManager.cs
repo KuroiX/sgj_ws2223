@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
-public class InputManager
+public class InputManager: MonoBehaviour
 {
     public static InputManager Instance;
 
     private void Awake()
     {
         Instance = this;
+        uiKeyPressedDict = new Dictionary<string, bool>();
     }
 
     [SerializeField]

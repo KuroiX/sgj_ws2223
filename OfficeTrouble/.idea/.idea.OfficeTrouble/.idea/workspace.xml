@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Key/Key.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -46,6 +46,7 @@
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/CreateSpamTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/TestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/SpamTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" />
       </list>
@@ -91,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670619112931</updated>
-      <workItem from="1670619125260" duration="10536000" />
+      <workItem from="1670619125260" duration="11447000" />
     </task>
     <servers />
   </component>

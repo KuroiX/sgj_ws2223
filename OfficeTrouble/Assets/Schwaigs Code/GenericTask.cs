@@ -13,7 +13,7 @@ public abstract class GenericTask : ScriptableObject, ITask
     private int _yCoordinate;
 
     // Corresponding key
-    private Key _key;
+    //private Key _key;
     
     // GameLogic
     [SerializeField] private float TickInterval = 0.5f;
@@ -87,7 +87,7 @@ public abstract class GenericTask : ScriptableObject, ITask
 
     private void CheckKeyState()
     {
-        bool newKeyState = true;
+        bool newKeyState = InputManager.Instance.KeyIsPressed(ButtonValue);
         if (newKeyState && !_lastKeyState)
         {
             OnKeyPressed();
@@ -99,5 +99,20 @@ public abstract class GenericTask : ScriptableObject, ITask
         }
 
         _lastKeyState = newKeyState;
+    }
+
+    public String GetKeyValue()
+    {
+        return ButtonValue;
+    }
+
+    public int GetXCoord()
+    {
+        return _xCoordinate;
+    }
+
+    public int GetYCoord()
+    {
+        return _yCoordinate;
     }
 }
