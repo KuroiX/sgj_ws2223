@@ -1,36 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
 public class Key
 {
     [SerializeField]
     private GameObject visual;
-    private KeyControl identifier;
-    private bool pressed;
+    private string identifier;
+    public event EventHandler keyPressed;
+    public event EventHandler keyReleased;
 
-    public Key(KeyControl identifier)
+    public Key(string identifier)
     {
         this.identifier = identifier;
     }
 
     public void ProcessKey()
     {
-        if (identifier.wasPressedThisFrame)
+        if (((KeyControl)Keyboard.current[identifier]).wasPressedThisFrame)
         {
-            pressed = true;
+            OnKeyPressed();
         }
 
-        if (identifier.wasReleasedThisFrame)
+        if (((KeyControl)Keyboard.current[identifier]).wasReleasedThisFrame)
         {
-            pressed = false;
+            OnKeyReleased();
         }
     }
 
-    public bool GetPressed()
+    private void OnKeyPressed()
     {
-        return pressed;
+        keyPressed?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnKeyReleased()
+    {
+        keyReleased?.Invoke(this, EventArgs.Empty);
     }
 
 }
