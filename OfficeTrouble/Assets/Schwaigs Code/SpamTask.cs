@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.WebSockets;
 using UnityEngine;
 
 public class SpamTask : GenericTask
@@ -28,12 +28,13 @@ public class SpamTask : GenericTask
         // Nothing to be done here
     }
 
-    public override void OnKeyPressed()
+    public override void OnKeyPressed(object sender, EventArgs args)
     {
+        Debug.Log("Key pressed " + ButtonValue);
         _numberPressed++;
     }
 
-    public override void OnKeyUnpressed()
+    public override void OnKeyUnpressed(object sender, EventArgs args)
     {
         // Nothing to be done here
     }
