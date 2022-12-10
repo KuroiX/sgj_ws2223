@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Task#2
   m_EditorClassIdentifier: 
   _xCoordinate: 1000
-  _yCoordinate: 1000
+  _yCoordinate: 500
   TickInterval: 0.5
   TimeBeforeFirstTick: 1
   PenaltyValue: 10
-  ButtonValue: a
+  ButtonValue: A
   SpamNumber: 10

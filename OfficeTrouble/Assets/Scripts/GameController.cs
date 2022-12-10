@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private Sequence sequence;
     [SerializeField] private GameObject textPrefab;
-    [SerializeField] private Transform canvasTransform;
+    [SerializeField] private RectTransform canvasTransform;
     
     private int _currentTaskIndex;
     private List<GenericTask> _activeTasks;
@@ -34,36 +34,15 @@ public class GameController : MonoBehaviour
         _currentTaskIndex = 0;
         _activeTasks = new List<GenericTask>();
         _activeKeyAlerts = new List<GameObject>();
-       //StartCoroutine(ActivateNextTask());
-       
-       
-       if (sequence.tasks.Count > 0)
-       {
-           TaskSchedule currentTaskSchedule = sequence.tasks.ElementAt(_currentTaskIndex);
-           _activeTasks.Add(currentTaskSchedule.task);
-           currentTaskSchedule.task.StartTask();
-           ShowKeyAlert(currentTaskSchedule.task);
-            
-           if (_currentTaskIndex + 1 < sequence.tasks.Count)
-           {
-               float delaySeconds = sequence.tasks[_currentTaskIndex + 1].timeStamp - sequence.tasks[_currentTaskIndex].timeStamp;
-               //yield return new WaitForSeconds(delaySeconds);
-               _currentTaskIndex++;
-               StartCoroutine(ActivateNextTask());
-           }
-           else
-               Debug.Log("Wohoo you completed the sequence");
-       }
+       StartCoroutine(ActivateNextTask());
     }
 
     private void Update()
     {
-        
-        
 
         foreach (GenericTask task in _activeTasks)
         {
-            task.ProcessUpdate();
+            //task.ProcessUpdate();
         }
 
     }
@@ -99,8 +78,8 @@ public class GameController : MonoBehaviour
     
     private void ShowKeyAlert(GenericTask task)
     {
-        GameObject newText = Instantiate(textPrefab, new Vector3(task.GetXCoord(), task.GetYCoord(), 0f), Quaternion.identity);
-        newText.transform.parent = canvasTransform;
+        GameObject newText = Instantiate(textPrefab, canvasTransform);
+        newText.transform.position = new Vector3(task.GetXCoord() / 1.834862f, task.GetYCoord() / 1.834862f, 0f);   // no idea why this is multiplied with 1.834862 but i have to revert it
         newText.GetComponent<TextMeshProUGUI>().text = task.GetKeyValue();
         _activeKeyAlerts.Add(newText);
     }

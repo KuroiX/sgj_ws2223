@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2638d47eabe3c42b493f5f465ab92f82, type: 3}
   m_Name: Task#1
   m_EditorClassIdentifier: 
-  _xCoordinate: 500
-  _yCoordinate: 500
+  _xCoordinate: 100
+  _yCoordinate: 100
   TickInterval: 0.5
   TimeBeforeFirstTick: 1
   PenaltyValue: 10
-  ButtonValue: 
+  ButtonValue: O
   HoldDuration: 6

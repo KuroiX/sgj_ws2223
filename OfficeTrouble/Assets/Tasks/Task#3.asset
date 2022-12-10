@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6348966f1524fe1ba0e3bff2cd546a, type: 3}
   m_Name: Task#3
   m_EditorClassIdentifier: 
-  _xCoordinate: 300
-  _yCoordinate: 700
+  _xCoordinate: 1600
+  _yCoordinate: 900
   TickInterval: 0.5
   TimeBeforeFirstTick: 1
   PenaltyValue: 10
-  ButtonValue: 
+  ButtonValue: B
   SpamNumber: 10

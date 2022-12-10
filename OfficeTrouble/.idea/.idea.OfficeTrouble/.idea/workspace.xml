@@ -21,9 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="20587bfb-1e6c-4a75-856c-a871d7e83635" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/KeyAlert.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/KeyAlert.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tasks/Task#1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tasks/Task#2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/Task#3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tasks/Task#3.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +64,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
@@ -124,37 +127,5 @@
       <screen x="0" y="25" width="1792" height="1034" />
     </state>
     <state x="685" y="263" key="RiderGenerateDialog/0.25.1792.1034@0.25.1792.1034" timestamp="1670622770751" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/GameController.cs</url>
-          <line>39</line>
-          <properties documentPath="C:\Users\Julian\Desktop\SGJWS2223\sgj_ws2223\OfficeTrouble\Assets\Scripts\GameController.cs" initialLine="38" containingFunctionPresentation="method 'Start'">
-            <startOffsets>
-              <option value="819" />
-            </startOffsets>
-            <endOffsets>
-              <option value="848" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/GameController.cs</url>
-          <line>41</line>
-          <properties documentPath="C:\Users\Julian\Desktop\SGJWS2223\sgj_ws2223\OfficeTrouble\Assets\Scripts\GameController.cs" initialLine="40" containingFunctionPresentation="method 'Start'">
-            <startOffsets>
-              <option value="869" />
-            </startOffsets>
-            <endOffsets>
-              <option value="948" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
