@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,11 +9,11 @@ public abstract class GenericTask : ScriptableObject, ITask
 {
     // Private Variables
     // Screen Coordinates
-    private int _xCoordinate;
-    private int _yCoordinate;
+    [SerializeField]private int _xCoordinate;
+    [SerializeField]private int _yCoordinate;
 
     // Corresponding key
-    private Key _key;
+    //private Key _key;
     
     // GameLogic
     [SerializeField] private float TickInterval = 0.5f;
@@ -21,7 +22,8 @@ public abstract class GenericTask : ScriptableObject, ITask
     [SerializeField] protected String ButtonValue;
     private float _timePassed;
     private bool _taskActive = false;
-    private bool _taskFulfilled;
+    protected bool _taskFulfilled;
+    private bool _lastKeyState;
 
     // Public Methods
     public abstract void OnUncompleted();
@@ -35,7 +37,8 @@ public abstract class GenericTask : ScriptableObject, ITask
         // Check if Task is active
         if (!_taskActive) return;
         
-        _key.ProcessKey();
+        // Check the key state
+        CheckKeyState();
         
         // Execute Task-specific logic
         SpecificUpdate();
@@ -58,17 +61,17 @@ public abstract class GenericTask : ScriptableObject, ITask
 
     public void StartTask()
     {
+        SpecificReset();
+        _taskFulfilled = false;
         _taskActive = true;
         _timePassed = -TimeBeforeFirstTick;
-        
-        _key = new Key(ButtonValue);
-        _key.keyPressed += OnKeyPressed;
-        _key.keyReleased += OnKeyUnpressed;
     }
 
-    public abstract void OnKeyPressed(object sender, EventArgs args);
+    public abstract void OnKeyPressed();
 
-    public abstract void OnKeyUnpressed(object sender, EventArgs args);
+    public abstract void OnKeyUnpressed();
+
+    protected abstract void SpecificReset();
     
     // Intern Methods
     protected void ResetTimer()
@@ -80,8 +83,36 @@ public abstract class GenericTask : ScriptableObject, ITask
     {
         _taskActive = false;
         _taskFulfilled = false;
+    }
 
-        _key.keyPressed -= OnKeyPressed;
-        _key.keyReleased -= OnKeyUnpressed;
+    private void CheckKeyState()
+    {
+        bool newKeyState = InputManager.Instance.KeyIsPressed(ButtonValue);
+        if (newKeyState && !_lastKeyState)
+        {
+            OnKeyPressed();
+        }
+
+        if (!newKeyState && _lastKeyState)
+        {
+            OnKeyUnpressed();
+        }
+
+        _lastKeyState = newKeyState;
+    }
+
+    public String GetKeyValue()
+    {
+        return ButtonValue;
+    }
+
+    public int GetXCoord()
+    {
+        return _xCoordinate;
+    }
+
+    public int GetYCoord()
+    {
+        return _yCoordinate;
     }
 }
