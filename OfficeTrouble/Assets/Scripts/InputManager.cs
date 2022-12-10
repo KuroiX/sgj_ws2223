@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,16 +7,16 @@ public class InputManager: MonoBehaviour
 {
     public static InputManager Instance;
 
+    [SerializeField]
+    private GameObject visual;
+
+    private Dictionary<string, bool> uiKeyPressedDict;
+
     private void Awake()
     {
         Instance = this;
         uiKeyPressedDict = new Dictionary<string, bool>();
     }
-
-    [SerializeField]
-    private GameObject visual;
-
-    private Dictionary<string, bool> uiKeyPressedDict;
 
 
     public void UIKeyPressed(string key)
@@ -47,6 +46,10 @@ public class InputManager: MonoBehaviour
 
     public bool KeyIsPressed(string key)
     {
+        if (key == "")
+        {
+            Debug.Log("Warning: GameObject " + gameObject.name + " probably has a task script associated with no key name set!");
+        }
         bool uiKeyPressed = uiKeyPressedDict.ContainsKey(key) && uiKeyPressedDict[key];
         return uiKeyPressed || ((KeyControl)Keyboard.current[key]).isPressed;
     }

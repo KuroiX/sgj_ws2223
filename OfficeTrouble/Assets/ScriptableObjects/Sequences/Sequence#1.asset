@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sequence#1
   m_EditorClassIdentifier: 
   tasks:
-  - task: {fileID: 11400000, guid: 02d4409709bb449fea58613394b7266d, type: 2}
+  - task: {fileID: 103474641620794100, guid: dc03db00bde3851459d4278a1253add7, type: 3}
     timeStamp: 0
-  - task: {fileID: 11400000, guid: fdc3cd9a426b84522a5ba4297aef38b5, type: 2}
+  - task: {fileID: 5748416342880135856, guid: 3a6a6526122b9aa4cbbeb751801d99ee, type: 3}
     timeStamp: 3
-  - task: {fileID: 11400000, guid: b3b6dd5b3158c90498d17eae18717582, type: 2}
+  - task: {fileID: 3082351556585083476, guid: 34ea301b9f267034eaf93bbd0246705b, type: 3}
     timeStamp: 6

@@ -10,7 +10,7 @@ public class TestScript : MonoBehaviour
     {
         foreach (var t in Tasks)
         {
-            t.StartTask();
+            //t.StartTask();
         }
     }
 
@@ -19,7 +19,7 @@ public class TestScript : MonoBehaviour
     {
         foreach (var t in Tasks)
         {
-            t.ProcessUpdate();
+           //t.ProcessUpdate();
         }
     }
 }

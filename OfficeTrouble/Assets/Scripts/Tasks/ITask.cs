@@ -9,7 +9,7 @@ public interface ITask
 
     public bool CheckTaskFulfilled();
 
-    public void ProcessUpdate();
+    //public void ProcessUpdate();
 
-    public void StartTask();
+    //public void StartTask();
 }
