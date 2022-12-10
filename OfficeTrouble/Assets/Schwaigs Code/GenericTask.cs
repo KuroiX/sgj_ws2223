@@ -9,8 +9,8 @@ public abstract class GenericTask : ScriptableObject, ITask
 {
     // Private Variables
     // Screen Coordinates
-    private int _xCoordinate;
-    private int _yCoordinate;
+    [SerializeField]private int _xCoordinate;
+    [SerializeField]private int _yCoordinate;
 
     // Corresponding key
     //private Key _key;
