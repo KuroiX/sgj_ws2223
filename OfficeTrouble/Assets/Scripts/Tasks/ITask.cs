@@ -4,12 +4,13 @@ using UnityEngine;
 
 public interface ITask
 {
+/*
+    public void OnPenalty();
 
-    //public void OnPenalty();
+    public bool CheckTaskFulfilled();
 
-    //public bool CheckTaskFulfilled();
+    public void ProcessUpdate();
 
-    //public void ProcessUpdate();
-
-    //public void StartTask();
+    public void StartTask();*/
+	
 }
