@@ -51,4 +51,8 @@ public class SpamTask : GenericTask
         // Nothing to be done here
     }
 
+    protected override float CalculateTaskProgress()
+    {
+        return _numberPressed / spamNumber;
+    }
 }

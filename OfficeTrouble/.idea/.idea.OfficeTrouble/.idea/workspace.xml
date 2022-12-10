@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20587bfb-1e6c-4a75-856c-a871d7e83635" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+    <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Schwaigs Testscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Schwaigs Testscene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/NewHoldTask.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tasks/NewHoldTask.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tasks/NewSpamTask.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tasks/NewSpamTask.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670619112931</updated>
-      <workItem from="1670619125260" duration="13612000" />
+      <workItem from="1670619125260" duration="13823000" />
     </task>
     <servers />
   </component>
