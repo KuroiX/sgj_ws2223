@@ -15,7 +15,6 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private StressMeter _stressMeter;
     private bool _initialDelayOver;
     private float _passedSecondsSinceStart;
-    private float _taskProgress;
     private bool _lastKeyState;
     protected float _taskProgress;
     protected KeyWrapper _currentKey;
