@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         _currentTaskIndex = 0;
-        StartCoroutine(Delay());
+        StartCoroutine(ActivateNextTask());
     }
 
     private void Update()
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
     
     #region Coroutines
     
-    private IEnumerator Delay()
+    private IEnumerator ActivateNextTask()
     {
         GenericTask currentTask = tasks[_currentTaskIndex];
         _activeTasks.Add(currentTask);
@@ -59,10 +59,10 @@ public class GameController : MonoBehaviour
         
         if (_currentTaskIndex + 1 < timestampsSeconds.Length)
         {
-            float delay = timestampsSeconds[_currentTaskIndex + 1] - timestampsSeconds[_currentTaskIndex];
-            yield return new WaitForSeconds(delay);
+            float delaySeconds = timestampsSeconds[_currentTaskIndex + 1] - timestampsSeconds[_currentTaskIndex];
+            yield return new WaitForSeconds(delaySeconds);
             _currentTaskIndex++;
-            StartCoroutine(Delay());
+            StartCoroutine(ActivateNextTask());
         }
         else
             Debug.Log("Wohoo you completed the sequence");

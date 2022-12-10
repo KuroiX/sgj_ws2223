@@ -152,13 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869a94ff3b16772409a4ae9860a9335d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks: 61006200650064006800
-  timestampsSeconds:
-  - 0
-  - 5
-  - 10
-  - 15
-  - 20
+  tasks: []
+  timestampsSeconds: []
 --- !u!4 &2028744951
 Transform:
   m_ObjectHideFlags: 0
