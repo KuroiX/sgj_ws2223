@@ -10,6 +10,6 @@ public class Sequence : ScriptableObject
 [Serializable]
 public struct TaskSpawner
 {
-    //public KeyTask task;
+    public GenericTask task;
     public float timeStamp;
 }
