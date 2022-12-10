@@ -36,11 +36,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/ITask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/ITask.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/NewHoldTask.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/NewHoldTask.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/NewSpamTask.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tasks/NewSpamTask.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +65,13 @@
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/KeyWrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" />
       </list>
     </option>
   </component>
@@ -118,7 +116,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670619112931</updated>
-      <workItem from="1670619125260" duration="17429000" />
+      <workItem from="1670619125260" duration="24665000" />
     </task>
     <servers />
   </component>

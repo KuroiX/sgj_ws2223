@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 {
+    // GameLogic
     
     [SerializeField] protected string keyName;
     [SerializeField] protected float initalDelaySeconds;
@@ -16,6 +17,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private float _passedSecondsSinceStart;
     private float _taskProgress;
     private bool _lastKeyState;
+    protected float _taskProgress;
+    protected KeyWrapper _currentKey;
 
     #region Abstract Methods
 
@@ -58,8 +61,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     private void HandleKeyState()
     {
-        bool newKeyState = InputManager.Instance.KeyIsPressed(keyName);
-        
+        bool newKeyState = InputManager.Instance.KeyIsPressed(_currentKey.GetKeyCode());
         if (newKeyState && !_lastKeyState)
         {
             OnKeyPressed();
@@ -75,7 +77,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     public string GetKeyName()
     {
-        return keyName;
+        return _currentKey.GetUIText();
     }
 
     public bool GetTaskFulfilled()
@@ -86,6 +88,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     public bool GetTaskIsBeingDealtWith()
     {
         return TaskIsBeingDealtWith;
+    }
+
+    public string GetKeyValue()
+    {
+        return _currentKey.GetKeyCode();
     }
 
     public event Action<float> ValueChanged;
