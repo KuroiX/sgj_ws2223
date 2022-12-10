@@ -33,6 +33,7 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] private bool gameStart;
         
     [Range(0,1.0f)]public float panicLevel;
+    private IValueChanged valueChangedEvent;
     
     [System.Serializable]
     public class SoundAudioClip
@@ -206,4 +207,25 @@ public class AudioManagerScript : MonoBehaviour
     {
         AudioPlayScript.PlaySound(sound);
     }
+    
+    public void Register(IValueChanged value)
+    {
+        valueChangedEvent = value;
+        valueChangedEvent.ValueChanged += ChangePanicLevel;
+    }
+
+    private void ChangePanicLevel(float newValue)
+    {
+        panicLevel = newValue;
+    }
+    
+    public void OnDestroy()
+    {
+        if (valueChangedEvent != null)
+        {
+            valueChangedEvent.ValueChanged -= ChangePanicLevel;
+        }
+
+    }
+    
 }

@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         StressMeter = new StressMeter();
-        panikBar.Register(StressMeter);
+        
     }
 
     private void Start()
@@ -37,6 +37,8 @@ public class GameController : MonoBehaviour
         _currentTaskIndex = 0;
         if (sequence.tasks.Count > 0)
             StartCoroutine(ActivateNextTask());
+        panikBar.Register(StressMeter);
+        AudioManagerScript.Instance.Register(StressMeter);
     }
 
     private void Update()

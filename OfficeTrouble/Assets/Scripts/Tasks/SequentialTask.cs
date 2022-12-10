@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -88,5 +88,6 @@ public class SequentialTask : MonoBehaviour//GenericTask
         _currentKey = _keys[_currentPosition];
         GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.GetUIText().ToUpper();
     }
-    */
+    
 }
+*/

@@ -8,6 +8,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] protected string keyName;
     [SerializeField] protected float initalDelaySeconds;
     [SerializeField] protected float stressIncrementPerTick;
+    [SerializeField] private AudioPlayScript.SoundClip soundClip;
 
     protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
@@ -104,6 +105,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
             ValueChanged?.Invoke(value);
             _taskProgress = value;
         }
+    }
+
+    private void PlayTaskSound()
+    {
+        AudioManagerScript.Instance.PlaySound(soundClip);
     }
 
 }
