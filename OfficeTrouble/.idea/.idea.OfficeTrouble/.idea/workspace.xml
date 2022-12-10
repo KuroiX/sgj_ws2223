@@ -20,13 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task4.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/Task4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/Sequence#1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/Sequence#1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +57,11 @@
         <option value="$PROJECT_DIR$/Assets/Schwaigs Code/GenericTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Key/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
       </list>
     </option>
   </component>
@@ -97,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670619112931</updated>
-      <workItem from="1670619125260" duration="21546000" />
+      <workItem from="1670619125260" duration="22792000" />
     </task>
     <servers />
   </component>

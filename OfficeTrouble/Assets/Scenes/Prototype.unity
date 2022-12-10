@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869a94ff3b16772409a4ae9860a9335d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequence: {fileID: 11400000, guid: 4ff061e65aa302d4381d15f0f8940e4f, type: 2}
+  sequence: {fileID: 11400000, guid: 18b9eef9657b04f03abeb969cbfa525a, type: 2}
   canvasTransform: {fileID: 49069167}
 --- !u!4 &2028744951
 Transform:
