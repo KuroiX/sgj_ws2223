@@ -18,14 +18,19 @@ public class TaskSprite : MonoBehaviour
     {
         foreach (var goName in activates)
         {
-            var image = GameObject.Find(goName).GetComponent<Image>();
-            image.enabled = value;
+			if (GameObject.Find(goName)) {
+				var image = GameObject.Find(goName).GetComponent<Image>();
+				image.enabled = value;
+			}
         }
 
         foreach (var goName in deactivates)
         {
-            var image = GameObject.Find(goName).GetComponent<Image>();
-            image.enabled = !value;
-        }
+			if (GameObject.Find(goName))
+			{
+				var image = GameObject.Find(goName).GetComponent<Image>();
+				image.enabled = !value;
+			}
+		}
     }
 }
