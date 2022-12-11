@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Sequence#1
   m_EditorClassIdentifier: 
   tasks:
-  - task: {fileID: -889640809350692528, guid: 274a2f9ad4ad07e45aaae4879deed4ee, type: 3}
+  - task: {fileID: 4278791543345104993, guid: 8ba25ca10968f6745919576b26d35ac7, type: 3}
     timeStamp: 0
-  - task: {fileID: 8575930439640459196, guid: fe41e69db7aa970429665f7bb5a6ea7c, type: 3}
+  - task: {fileID: 7720746499325154708, guid: fe41e69db7aa970429665f7bb5a6ea7c, type: 3}
     timeStamp: 2
-  - task: {fileID: -8374293247382240426, guid: 8ff788fc712eca24491f434f97e00360, type: 3}
+  - task: {fileID: 6706866663778077260, guid: 8ff788fc712eca24491f434f97e00360, type: 3}
     timeStamp: 3
-  - task: {fileID: 8365656391076557426, guid: 98ba66dd56b87ba42908143729072168, type: 3}
+  - task: {fileID: 6795689515796444001, guid: 98ba66dd56b87ba42908143729072168, type: 3}
     timeStamp: 5
