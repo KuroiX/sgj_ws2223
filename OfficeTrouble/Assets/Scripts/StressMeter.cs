@@ -7,7 +7,7 @@ public class StressMeter: IValueChanged
     
     public event Action<float> ValueChanged;
 
-    private void OnValueChanged(float value)
+	private void OnValueChanged(float value)
     {
         ValueChanged?.Invoke(value);
     }
@@ -34,21 +34,9 @@ public class StressMeter: IValueChanged
         StressLevel -= value;
     }
 
-    /*
-    public void OnUpdate(List<GenericTask> activeTasks)
-    {
-        // TODO: proper formula
+	public bool IsGameLost()
+	{
+		return _stressLevel >= MaxValue;
+	}
 
-        float amount = activeTasks.Count;
-
-        // stressLevel += amount / 50f * Time.deltaTime; TODO
-        StressLevel += 0.2f;
-
-        if (StressLevel >= MaxValue)
-        {
-            Debug.Log("LOSE!");
-        }
-    }
-    */
-    
 }

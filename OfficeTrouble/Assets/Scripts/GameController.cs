@@ -63,8 +63,11 @@ public class GameController : MonoBehaviour
             Destroy(task.gameObject);
         }
 
-        Debug.Log(_allTasksAreBeingDealtWith);
-    }
+		if (StressMeter.IsGameLost())
+		{
+			Debug.Log("YOU LOST!");
+		}
+	}
 
     private void FixedUpdate()
     {
@@ -99,17 +102,4 @@ public class GameController : MonoBehaviour
     
     #endregion
     
-    #region Helper Functions
-    
-    /*private void ShowKeyAlert(GenericTask task)
-    {
-        GameObject newText = Instantiate(textPrefab, canvasTransform);
-        newText.transform.position = new Vector3(task.GetXCoord() / 1.834862f, task.GetYCoord() / 1.834862f, 0f);   // no idea why this is multiplied with 1.834862 but i have to revert it
-        newText.GetComponent<TextMeshProUGUI>().text = task.GetKeyValue();
-        _activeKeyAlerts.Add(newText);
-        task.correspondingAlert = newText;
-    }*/
-
-    #endregion
-    
-}
+ }

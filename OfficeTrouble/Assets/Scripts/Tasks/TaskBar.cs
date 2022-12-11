@@ -11,7 +11,6 @@ public class TaskBar : MonoBehaviour
     [SerializeField]
     private RectTransform sliderRecttrans;
     [SerializeField]
-    bool panikBar;
     private float fillValue = 0f;
 
     [SerializeField]
@@ -24,20 +23,7 @@ public class TaskBar : MonoBehaviour
     {
         fillValue = amount;
         slider.value = fillValue;
-
-        if (panikBar)
-        {
-            if (fillValue > 0.7)
-            {
-                sliderImage.color = Color.Lerp(Color.red, new Color(0.2f, 0, 0, 1), Mathf.PingPong(Time.time, 1f));
-            }
-            else
-            {
-                sliderImage.color = Color.Lerp(Color.green, Color.red, fillValue / 1);
-            }
-        }
-
-    }
+	}
 
     public void Awake()
     {

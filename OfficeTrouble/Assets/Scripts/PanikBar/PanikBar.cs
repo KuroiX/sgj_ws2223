@@ -25,9 +25,9 @@ public class PanikBar : MonoBehaviour
 
         if (panikBar)
         {
-            if (amount > 0.7)
+            if (amount > 0.75)
             {
-                sliderImage.color = Color.Lerp(Color.red, new Color(0.2f, 0, 0, 1), Mathf.PingPong(Time.time, 1f));
+                sliderImage.color = Color.Lerp(Color.red, new Color(0.67f, 0.67f, 0.67f, 1), Mathf.PingPong(Time.time, 1f));
             }
             else
             {
