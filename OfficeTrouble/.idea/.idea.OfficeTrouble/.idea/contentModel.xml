@@ -6,11 +6,15 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Animations" t="Include">
+          <e p="curtain" t="Include" />
+        </e>
         <e p="Audioclips" t="Include">
           <e p="Soundeffects" t="Include">
             <e p="Cat" t="Include" />
           </e>
         </e>
+        <e p="CatSprites" t="Include" />
         <e p="Imported" t="Include">
           <e p="RotatingCursor" t="Include">
             <e p="Prefabs" t="Include" />
@@ -67,6 +71,7 @@
         </e>
         <e p="Scenes" t="Include" />
         <e p="ScriptableObjects" t="Include">
+          <e p="CatPaths" t="Include" />
           <e p="Keys" t="Include" />
           <e p="Sequences" t="Include" />
         </e>
@@ -75,12 +80,17 @@
           <e p="AudioPlayScript.cs" t="Include" />
           <e p="Cat" t="Include">
             <e p="AnnoyingCatFace.cs" t="Include" />
+            <e p="CatAnimator.cs" t="Include" />
+            <e p="CatPath.cs" t="Include" />
+            <e p="CatTaskInfo.cs" t="Include" />
           </e>
           <e p="Cosmetics" t="Include">
             <e p="DropAnimation.cs" t="Include" />
           </e>
+          <e p="DraggableObject.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
+          <e p="Items" t="Include" />
           <e p="IValueChanged.cs" t="Include" />
           <e p="KeyWrapper.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
@@ -99,10 +109,14 @@
             <e p="SequentialTask.cs" t="Include" />
             <e p="SpamTask.cs" t="Include" />
             <e p="TaskBar.cs" t="Include" />
+            <e p="TaskSprite.cs" t="Include" />
             <e p="TestScript.cs" t="Include" />
           </e>
         </e>
-        <e p="Textures" t="Include" />
+        <e p="Textures" t="Include">
+          <e p="Level" t="Include" />
+          <e p="UI" t="Include" />
+        </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="OfficeTrouble.sln" t="IncludeFlat" />

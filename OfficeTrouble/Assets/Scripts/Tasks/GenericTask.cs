@@ -41,6 +41,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
+        PlayTaskSound();
     }
 
     public void Update()
@@ -122,24 +123,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.outputAudioMixerGroup = AudioManagerScript.Instance.SoundEffectMixer;
-        if (RandomLoopSounds)
-        {
-            //StartCoroutine(PlaySoundInLoop(source, soundClip));
-        }
-        else
-        {
-            source.clip = AudioPlayScript.GetAudioClip(soundClip);
-            source.Play();
-        }
-    }
-
-    /*private IEnumerator PlaySoundInLoop(AudioSource source, AudioPlayScript.SoundClip soundClip)
-    {
-        AudioClip clip = AudioPlayScript.GetAudioClip(soundClip);
-        source.clip = clip;
+        source.clip = AudioPlayScript.GetAudioClip(soundClip);
         source.Play();
-        yield return new WaitForSeconds(clip.length);
-        StartCoroutine(PlaySoundInLoop(source, soundClip));
-    }*/
+    }
 
 }
