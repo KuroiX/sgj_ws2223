@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public static class AudioPlayScript
 {
@@ -31,7 +32,6 @@ public static class AudioPlayScript
         RickRoll,
         CatScratch,
         TapeFixing,
-        LongTest,
     }
     
     public enum MusicClip
@@ -47,7 +47,9 @@ public static class AudioPlayScript
         //GameObject soundGameObject = new GameObject("Sound");
         //AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         //audioSource.PlayOneShot(GetAudioClip(sound));
-        AudioSource.PlayClipAtPoint(GetAudioClip(sound), Camera.main.transform.position);
+        //AudioSource.PlayClipAtPoint(GetAudioClip(sound), Camera.main.transform.position);
+        if (_audioSource == null) _audioSource = AudioManagerScript.Instance.SoundEffects;
+        _audioSource.PlayOneShot(GetAudioClip(sound));
     }
     
     /*public static void PlayMusic(MusicClip music)
@@ -65,7 +67,8 @@ public static class AudioPlayScript
         {
             if (soundAudioClip.sound == sound)
             {
-                return soundAudioClip.audioClip;
+                int rnd = Random.Range(0, soundAudioClip.audioClip.Length);
+                return soundAudioClip.audioClip[rnd];
             }
         }
         Debug.LogError("Sound " + sound + " not found!");

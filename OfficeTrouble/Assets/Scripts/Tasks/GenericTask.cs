@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
@@ -13,6 +14,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] public CatTaskInfo catTaskInfo;
     private TaskSprite _taskSprite;
     
+    
+    [SerializeField] private bool RandomLoopSounds = false; 
 
     protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
@@ -123,11 +126,9 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void PlayTaskSound()
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.outputAudioMixerGroup = AudioManagerScript.Instance.SoundEffectMixer;
         source.clip = AudioPlayScript.GetAudioClip(soundClip);
-        //source.loop = true;
         source.Play();
-        //AudioManagerScript.Instance.PlaySound(soundClip);
-
     }
 
 }

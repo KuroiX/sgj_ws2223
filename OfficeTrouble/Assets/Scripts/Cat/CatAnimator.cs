@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CatAnimator : MonoBehaviour
 {
@@ -15,7 +17,12 @@ public class CatAnimator : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        //PlayPath(testPath);
+        
+    }
+
+    public void Start()
+    {
+        PlayPath(testPath);
     }
 
     public void PlayPath(CatPath path)
@@ -24,12 +31,16 @@ public class CatAnimator : MonoBehaviour
         _queue = path.queue;
         rect.anchoredPosition = _queue[0];
         _animator.SetBool("isWalking", true);
+        
         StartCoroutine(WalkRoutine());
     }
 
     private IEnumerator WalkRoutine()
     {
         int i = 1;
+        
+        // Sound
+        AudioPlayScript.PlaySound(AudioPlayScript.SoundClip.Cat);
         
         while (true)
         {
@@ -58,6 +69,9 @@ public class CatAnimator : MonoBehaviour
                 i++;
                 //Debug.Break();
                 _animator.SetBool("isWalking", false);
+                // Manchmal Sound
+                int rnd = Random.Range(0, 3);
+                if(rnd==0) AudioPlayScript.PlaySound(AudioPlayScript.SoundClip.Cat);
                 yield return new WaitForSeconds(Random.Range(0f, 2f));
                 _animator.SetBool("isWalking", true);
             }
