@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private Sequence sequence;
     [SerializeField] private RectTransform canvasTransform;
     [SerializeField] private PanikBar panikBar;
-    
+    [SerializeField] private CatAnimator catAnimator;
+
+
     public StressMeter StressMeter;
     
     private List<GenericTask> _activeTasks;
@@ -35,8 +38,9 @@ public class GameController : MonoBehaviour
     {
         _activeTasks = new List<GenericTask>();
         _currentTaskIndex = 0;
-        if (sequence.tasks.Count > 0)
-            StartCoroutine(ActivateNextTask());
+        //if (sequence.tasks.Count > 0)
+        //    StartCoroutine(ActivateNextTask());
+        StartAllCoroutines();
         panikBar.Register(StressMeter);
         AudioManagerScript.Instance.Register(StressMeter);
     }
@@ -78,18 +82,46 @@ public class GameController : MonoBehaviour
 
     #endregion
     
+    #region ReGIonFOrOnEmeThOD xD
+
+    private void StartAllCoroutines()
+    {
+        for (int i = 0; i < sequence.tasks.Count; i++)
+        {
+            var schedule = sequence.tasks[i];
+            StartCoroutine(StartTaskAtTimestamp(i, schedule.timeStamp));
+            var task = schedule.task;
+            var cat = task.catTaskInfo;
+            if (cat.catExists)
+            {
+                StartCoroutine(StartCatAtTimestamp(i, schedule.timeStamp - cat.timeBeforeTask));
+            }
+        }
+    }
+
+    #endregion
+    
     #region Coroutines
 
-    private IEnumerator StartTaskAtTimestamp(float timestamp)
+    private IEnumerator StartTaskAtTimestamp(int index, float timestamp)
     {
         yield return new WaitForSeconds(timestamp);
         
+        GenericTask currentTask = sequence.tasks[index].task;
+        
+        GameObject currentTaskGameObject = Instantiate(currentTask.gameObject, canvasTransform);
+        currentTaskGameObject.GetComponentInChildren<TextMeshProUGUI>().text = currentTask.GetKeyName().ToUpper();
+        
+        _activeTasks.Add(currentTaskGameObject.GetComponent<GenericTask>());
     }
     
-    private IEnumerator StartCatAtTimestamp(float timestamp)
+    private IEnumerator StartCatAtTimestamp(int index, float timestamp)
     {
         yield return new WaitForSeconds(timestamp);
-        // TODO:
+        var schedule = sequence.tasks[index];
+        var catInfo = schedule.task.catTaskInfo;
+        
+        catAnimator.PlayPath(catInfo.path);
     }
     
     private IEnumerator ActivateNextTask()
