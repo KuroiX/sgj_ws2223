@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -71,7 +72,8 @@ public class GameController : MonoBehaviour
 		{
 			Debug.Log("YOU LOST!");
             AudioManagerScript.Instance.GameIsLost();
-		}
+            SceneManager.LoadScene("GameOver");
+        }
 	}
 
     private void FixedUpdate()
