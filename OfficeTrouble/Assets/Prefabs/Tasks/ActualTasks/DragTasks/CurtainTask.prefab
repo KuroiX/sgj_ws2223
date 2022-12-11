@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2221538200215885205}
   - component: {fileID: 7718438906977724994}
+  - component: {fileID: 2554782937605260980}
   m_Layer: 5
   m_Name: CurtainTask
   m_TagString: Untagged
@@ -58,11 +59,28 @@ MonoBehaviour:
   soundClip: 4
   spriteName: 
   catTaskInfo:
-    catExists: 0
-    path: {fileID: 0}
-    timeBeforeTask: 0
+    catExists: 1
+    path: {fileID: 11400000, guid: f2995f79222f6244eb273321759383e1, type: 2}
+    timeBeforeTask: 4
   draggableObjectName: CurtainDown
   triggerName: CurtainTrigger
+  isTapeDragTask: 0
+--- !u!114 &2554782937605260980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221538200215885206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9852a06f11d64378a4ce7429ff9f662a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activates:
+  - CurtainDown
+  deactivates:
+  - CurtainUp
 --- !u!1 &2221538200436163875
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +253,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2221538201974526513
 CanvasRenderer:
@@ -265,8 +283,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d9528652131b39449bf6f042e8b9937c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

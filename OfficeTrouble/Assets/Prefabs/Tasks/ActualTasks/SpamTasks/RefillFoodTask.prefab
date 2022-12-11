@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6209879417210579628}
   - component: {fileID: -241156210386005500}
   m_Layer: 5
-  m_Name: MergeConflictTask
+  m_Name: RefillFoodTask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 618, y: 512}
+  m_AnchoredPosition: {x: 1513, y: 349}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6209879417210579628
@@ -174,17 +174,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6348966f1524fe1ba0e3bff2cd546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: 40588b66fc0f3434eb07e8d8005e2398, type: 2}
+  key: {fileID: 11400000, guid: e6bd1497c36b748518b62f008ecb1a42, type: 2}
   initalDelaySeconds: 0
   stressIncrementPerTick: 0.5
-  soundClip: 8
+  soundClip: 0
   spriteName: 
   catTaskInfo:
-    catExists: 0
-    path: {fileID: 0}
-    timeBeforeTask: 0
-  numberToPress: 10
-  allowedSecondBetweenPresses: 0.05
+    catExists: 1
+    path: {fileID: 11400000, guid: 5a657f5b8b3f478479c6317617dc17a7, type: 2}
+    timeBeforeTask: 7
+  numberToPress: 20
+  allowedSecondBetweenPresses: 0.5
 --- !u!114 &-241156210386005500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,9 +197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9852a06f11d64378a4ce7429ff9f662a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activates:
-  - ScreenError
-  deactivates: []
+  activates: []
+  deactivates:
+  - Food
 --- !u!1 &103474641941572163
 GameObject:
   m_ObjectHideFlags: 0

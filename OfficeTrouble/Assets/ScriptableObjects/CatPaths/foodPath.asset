@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a5d4aaa21ef4723a0a2f87a7f367443, type: 3}
-  m_Name: pathToCurtain
+  m_Name: foodPath
   m_EditorClassIdentifier: 
   queue:
-  - {x: 1750, y: 224}
-  - {x: 1358, y: 224}
-  - {x: 1333, y: 323}
   - {x: 740, y: -155}
+  - {x: 740, y: 122}
+  - {x: 1264, y: 206}
+  - {x: 1350, y: 354}
+  - {x: 1771, y: 282}

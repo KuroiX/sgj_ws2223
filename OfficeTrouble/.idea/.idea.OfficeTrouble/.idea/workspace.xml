@@ -19,7 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="" />
+    <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/DragTasks/CurtainTask.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/DragTasks/CurtainTask.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/DragTasks/TapeTask.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/DragTasks/TapeTask.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/HoldTasks/RadioTask.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/HoldTasks/RadioTask.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/SpamTasks/MergeConflictTask.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/ActualTasks/SpamTasks/MergeConflictTask.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/TaskTemplate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/TaskTemplate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/CatPaths/pathToCurtain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/CatPaths/pathToCurtain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/EveryTask.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/EveryTask.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskSprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/TaskSprite.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
