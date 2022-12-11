@@ -2,63 +2,42 @@ using UnityEngine;
 
 public class HoldTask : GenericTask
 {
-    // Additional Parameter
-    [SerializeField] private float holdDuration = 6.0f;
-
-    private bool _keyState;
-    private float _timeSinceHold;
-    private float _timeSincePenalty;
     
-    protected void Start()
-    {
-        _timeSincePenalty = -timeBeforeFirstTick;
-    }
+    [SerializeField] private float holdDuration;
+
+    private bool _keyPressed;
+    private float _timeSinceHold;
     
     protected override void SpecificUpdate()
     {
-        if (_keyState)
-        {
+        
+        if (_keyPressed)
             _timeSinceHold += Time.deltaTime;
-            //Debug.Log("increased..");
-        }
         else
-        {
             _timeSinceHold = 0.0f;
-            /*_timeSincePenalty += Time.deltaTime;
-            if (_timeSincePenalty >= 0)
-            {
-                OnPenalty();
-                _timeSincePenalty -= tickInterval;
-            }*/
-        }
 
         if (_timeSinceHold >= holdDuration)
         {
             TaskFulfilled = true;
         }
+        
     }
 
-    public override bool CheckTaskFulfilled()
+    protected override float CalculateTaskProgress()
     {
-        return TaskFulfilled;
+        return _timeSinceHold / holdDuration;
+    }
+
+    protected override void OnKeyPressed()
+    {
+        _keyPressed = true;
+        TaskIsBeingDealtWith = true;
+    }
+
+    protected override void OnKeyUnpressed()
+    {
+        _keyPressed = false;
+        TaskIsBeingDealtWith = false;
     }
     
-    public override void OnPenalty()
-    {
-        // ToDo: Implement penalty logic
-        Debug.Log("Task: Penalty applied! Penalty value: "+ penaltyValue);
-    }
-    
-    public override void OnKeyPressed()
-    {
-        Debug.Log("Key " + keyName + " pressed.");
-        _keyState = true;
-    }
-
-    public override void OnKeyUnpressed()
-    {
-        Debug.Log("Key "+keyName+" released.");
-        _keyState = false;
-    }
-
 }

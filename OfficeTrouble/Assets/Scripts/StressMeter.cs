@@ -1,34 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class StressMeter: IValueChanged
 {
+
+    private const float MaxValue = 100f;
+    
     public event Action<float> ValueChanged;
 
-    private void OnValueChanged(float value)
+	private void OnValueChanged(float value)
     {
         ValueChanged?.Invoke(value);
     }
 
     private float _stressLevel;
 
-    private float stressLevel
+    private float StressLevel
     {
         get => _stressLevel;
         set
         {
-            OnValueChanged(value);
+            OnValueChanged(value / MaxValue);
             _stressLevel = value;
         }
     }
 
-    public void OnUpdate(List<GenericTask> activeTasks)
+    public void IncreaseStressLevel(float value)
     {
-        // TODO: proper formula
-
-        float amount = activeTasks.Count;
-
-        stressLevel += (float)amount / 50f * Time.deltaTime;
+        StressLevel += value;
     }
+
+    public void DecreaseStressLevel(float value)
+    {
+        StressLevel -= value;
+    }
+
+	public bool IsGameLost()
+	{
+		return _stressLevel >= MaxValue;
+	}
+
 }

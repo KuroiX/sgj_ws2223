@@ -1,48 +1,66 @@
+using System;
 using UnityEngine;
 
-public abstract class GenericTask : MonoBehaviour, ITask
+public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 {
     // GameLogic
-    [SerializeField] protected string keyName;
-    [SerializeField] protected float timeBeforeFirstTick = 1.0f;
-    [SerializeField] protected float tickInterval = 0.5f;
-    [SerializeField] protected int penaltyValue = 10;
+    
+    [SerializeField] protected KeyWrapper key;
+    [SerializeField] protected float initalDelaySeconds;
+    [SerializeField] protected float stressIncrementPerTick;
+    [SerializeField] private AudioPlayScript.SoundClip soundClip;
+
+    protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
+    
+    private StressMeter _stressMeter;
+    private bool _initialDelayOver;
+    private float _passedSecondsSinceStart;
     private bool _lastKeyState;
+    private float _taskProgress;
 
     #region Abstract Methods
-    
+
     protected abstract void SpecificUpdate();
 
-    public abstract bool CheckTaskFulfilled();
-    
-    public abstract void OnPenalty();
-    
-    public abstract void OnKeyPressed();
+    protected abstract float CalculateTaskProgress();
 
-    public abstract void OnKeyUnpressed();
-    
+    protected abstract void OnKeyPressed();
+
+    protected abstract void OnKeyUnpressed();
+
     #endregion
-    
+
+    private void Start()
+    {
+        _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
+    }
+
     public void Update()
     {
-        // Check the key state
         HandleKeyState();
+
+        if (!_initialDelayOver)
+        {
+            _passedSecondsSinceStart += Time.deltaTime;
+            if (_passedSecondsSinceStart > initalDelaySeconds)
+                _initialDelayOver = true;
+        }
         
-        // Execute Task-specific logic
         SpecificUpdate();
         
-        // Check if Task is fulfilled
-        TaskFulfilled = CheckTaskFulfilled();
-        if (TaskFulfilled)
-        {
-            Destroy(gameObject);
-        }
+        TaskProgress = CalculateTaskProgress();
     }
     
+    private void FixedUpdate()
+    {
+        if (_initialDelayOver && !TaskIsBeingDealtWith)
+            _stressMeter.IncreaseStressLevel(stressIncrementPerTick);
+    }
+
     private void HandleKeyState()
     {
-        bool newKeyState = InputManager.Instance.KeyIsPressed(keyName);
+        bool newKeyState = InputManager.Instance.KeyIsPressed(key.GetKeyCode());
         if (newKeyState && !_lastKeyState)
         {
             OnKeyPressed();
@@ -56,9 +74,41 @@ public abstract class GenericTask : MonoBehaviour, ITask
         _lastKeyState = newKeyState;
     }
 
-    public string GetKeyName()
+    public bool GetTaskFulfilled()
     {
-        return keyName;
+        return TaskFulfilled;
+    }
+
+    public bool GetTaskIsBeingDealtWith()
+    {
+        return TaskIsBeingDealtWith;
+    }
+
+	public string GetKeyName()
+	{
+		return key.GetUIText();
+	}
+
+    public string GetKeyValue()
+    {
+        return key.GetKeyCode();
+    }
+
+    public event Action<float> ValueChanged;
+    
+    private float TaskProgress
+    {
+        get => _taskProgress;
+        set
+        {
+            ValueChanged?.Invoke(value);
+            _taskProgress = value;
+        }
+    }
+
+    private void PlayTaskSound()
+    {
+        AudioManagerScript.Instance.PlaySound(soundClip);
     }
 
 }

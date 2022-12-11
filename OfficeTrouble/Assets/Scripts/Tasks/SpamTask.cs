@@ -2,53 +2,39 @@ using UnityEngine;
 
 public class SpamTask : GenericTask
 {
-    // Additional Parameters
-    [SerializeField] private int spamNumber = 10;
+    
+    [SerializeField] private int numberToPress;
+    [SerializeField] private float allowedSecondBetweenPresses;
 
     private int _numberPressed;
-    private float _timeSincePenalty;
-    
-    protected void Start()
-    {
-        _timeSincePenalty = -timeBeforeFirstTick;
-    }
-    
+    private float _passedSecondsSinceLastPress;
+
     protected override void SpecificUpdate()
     {
-        _timeSincePenalty += Time.deltaTime;
-        /*// Penalty logic
-        if (_timeSincePenalty >= 0)
-        {
-            OnPenalty();
-            _timeSincePenalty =  _timeSincePenalty - tickInterval;
-        }*/
+        _passedSecondsSinceLastPress += Time.deltaTime;
+        if (TaskIsBeingDealtWith && _passedSecondsSinceLastPress > allowedSecondBetweenPresses)
+            TaskIsBeingDealtWith = false;
     }
 
-    public override bool CheckTaskFulfilled()
+    protected override float CalculateTaskProgress()
     {
-        return _numberPressed >= spamNumber;
+        return _numberPressed / (float) numberToPress;
     }
     
-    public override void OnPenalty()
-    {
-        // ToDo: Implement penalty logic
-        Debug.Log("Task: Penalty applied! Penalty value: "+ penaltyValue);
-    }
-
-    public override void OnKeyPressed()
+    protected override void OnKeyPressed()
     {
         _numberPressed++;
-        if (_numberPressed > spamNumber)
-        {
-            TaskFulfilled = true;
-        }
-        Debug.Log("Key " + keyName + " pressed " + _numberPressed + " times");
+        _passedSecondsSinceLastPress = 0f;
         
+        TaskIsBeingDealtWith = true;
+        
+        if (_numberPressed > numberToPress)
+            TaskFulfilled = true;
     }
 
-    public override void OnKeyUnpressed()
+    protected override void OnKeyUnpressed()
     {
-        // Nothing to be done here
+        // nothing to do here
     }
 
 }
