@@ -177,14 +177,14 @@ MonoBehaviour:
   key: {fileID: 11400000, guid: f570ac21ea6c2437cb0f654be680a12b, type: 2}
   initalDelaySeconds: 0.5
   stressIncrementPerTick: 0.5
-  soundClip: 8
+  soundClip: 13
   spriteName: 
   catTaskInfo:
     catExists: 0
     path: {fileID: 0}
     timeBeforeTask: 0
   RandomLoopSounds: 0
-  holdDuration: 5
+  holdDuration: 3
 --- !u!114 &5241458778651295309
 MonoBehaviour:
   m_ObjectHideFlags: 0

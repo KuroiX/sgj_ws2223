@@ -22,7 +22,7 @@ public class CatAnimator : MonoBehaviour
 
     public void Start()
     {
-        PlayPath(testPath);
+        //PlayPath(testPath);
     }
 
     public void PlayPath(CatPath path)
@@ -31,7 +31,7 @@ public class CatAnimator : MonoBehaviour
         _queue = path.queue;
         rect.anchoredPosition = _queue[0];
         _animator.SetBool("isWalking", true);
-        
+        StopAllCoroutines();
         StartCoroutine(WalkRoutine());
     }
 
@@ -72,7 +72,8 @@ public class CatAnimator : MonoBehaviour
                 // Manchmal Sound
                 int rnd = Random.Range(0, 3);
                 if(rnd==0) AudioPlayScript.PlaySound(AudioPlayScript.SoundClip.Cat);
-                yield return new WaitForSeconds(Random.Range(0f, 2f));
+                //yield return new WaitForSeconds(Random.Range(0f, 2f));
+                yield return new WaitForSeconds(1);
                 _animator.SetBool("isWalking", true);
             }
             else
