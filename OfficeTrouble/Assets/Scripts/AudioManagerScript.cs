@@ -43,7 +43,7 @@ public class AudioManagerScript : MonoBehaviour
     public class SoundAudioClip
     {
         public AudioPlayScript.SoundClip sound;
-        public AudioClip audioClip;
+        public AudioClip[] audioClip;
     }
     
     [System.Serializable]

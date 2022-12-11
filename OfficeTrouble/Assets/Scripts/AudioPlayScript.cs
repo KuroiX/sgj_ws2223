@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public static class AudioPlayScript
 {
@@ -31,7 +32,6 @@ public static class AudioPlayScript
         RickRoll,
         CatScratch,
         TapeFixing,
-        LongTest,
     }
     
     public enum MusicClip
@@ -65,7 +65,8 @@ public static class AudioPlayScript
         {
             if (soundAudioClip.sound == sound)
             {
-                return soundAudioClip.audioClip;
+                int rnd = Random.Range(0, soundAudioClip.audioClip.Length);
+                return soundAudioClip.audioClip[rnd];
             }
         }
         Debug.LogError("Sound " + sound + " not found!");

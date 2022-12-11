@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
@@ -9,6 +10,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] protected float initalDelaySeconds;
     [SerializeField] protected float stressIncrementPerTick;
     [SerializeField] private AudioPlayScript.SoundClip soundClip;
+    [SerializeField] private bool RandomLoopSounds = false; 
 
     protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
@@ -111,11 +113,24 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.outputAudioMixerGroup = AudioManagerScript.Instance.SoundEffectMixer;
-        source.clip = AudioPlayScript.GetAudioClip(soundClip);
-        //source.loop = true;
-        source.Play();
-        //AudioManagerScript.Instance.PlaySound(soundClip);
-
+        if (RandomLoopSounds)
+        {
+            //StartCoroutine(PlaySoundInLoop(source, soundClip));
+        }
+        else
+        {
+            source.clip = AudioPlayScript.GetAudioClip(soundClip);
+            source.Play();
+        }
     }
+
+    /*private IEnumerator PlaySoundInLoop(AudioSource source, AudioPlayScript.SoundClip soundClip)
+    {
+        AudioClip clip = AudioPlayScript.GetAudioClip(soundClip);
+        source.clip = clip;
+        source.Play();
+        yield return new WaitForSeconds(clip.length);
+        StartCoroutine(PlaySoundInLoop(source, soundClip));
+    }*/
 
 }
