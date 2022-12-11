@@ -57,6 +57,7 @@
           <e p="Tasks" t="Include">
             <e p="Sequence2" t="Include" />
             <e p="Sequence3" t="Include" />
+            <e p="TestSequence" t="Include" />
           </e>
         </e>
         <e p="Scenes" t="Include" />
@@ -67,6 +68,9 @@
         <e p="Scripts" t="Include">
           <e p="AudioManagerScript.cs" t="Include" />
           <e p="AudioPlayScript.cs" t="Include" />
+          <e p="Cat" t="Include">
+            <e p="AnnoyingCatFace.cs" t="Include" />
+          </e>
           <e p="GameController.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
           <e p="IValueChanged.cs" t="Include" />
@@ -90,7 +94,6 @@
             <e p="TestScript.cs" t="Include" />
           </e>
         </e>
-        <e p="Tasks" t="Include" />
         <e p="Textures" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />

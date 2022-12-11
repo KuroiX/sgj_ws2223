@@ -66,6 +66,7 @@ public class GameController : MonoBehaviour
 		if (StressMeter.IsGameLost())
 		{
 			Debug.Log("YOU LOST!");
+            AudioManagerScript.Instance.GameIsLost();
 		}
 	}
 

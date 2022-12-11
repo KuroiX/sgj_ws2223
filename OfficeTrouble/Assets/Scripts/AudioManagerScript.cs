@@ -203,6 +203,11 @@ public class AudioManagerScript : MonoBehaviour
         
     }
 
+    public void GameIsLost()
+    {
+        gameLost = true;
+    }
+
     public void PlaySound(AudioPlayScript.SoundClip sound)
     {
         AudioPlayScript.PlaySound(sound);

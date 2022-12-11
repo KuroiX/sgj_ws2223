@@ -17,6 +17,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private bool _initialDelayOver;
     private float _passedSecondsSinceStart;
     private bool _lastKeyState;
+    private float _taskProgress;
 
     #region Abstract Methods
 
