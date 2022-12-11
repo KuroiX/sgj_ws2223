@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 200
+  testPath: {fileID: 11400000, guid: f2995f79222f6244eb273321759383e1, type: 2}
 --- !u!1 &1699141071
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +577,6 @@ GameObject:
   - component: {fileID: 2134058466}
   - component: {fileID: 2134058469}
   - component: {fileID: 2134058468}
-  - component: {fileID: 2134058467}
   m_Layer: 5
   m_Name: TaskSprite
   m_TagString: Untagged
@@ -604,20 +604,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2134058467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134058465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9852a06f11d64378a4ce7429ff9f662a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inactiveSprite: {fileID: 21300000, guid: d6a44ab95b0def041a7929981a2c23a1, type: 3}
-  activeSprite: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
 --- !u!114 &2134058468
 MonoBehaviour:
   m_ObjectHideFlags: 0

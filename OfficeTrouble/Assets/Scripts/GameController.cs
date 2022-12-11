@@ -79,6 +79,18 @@ public class GameController : MonoBehaviour
     #endregion
     
     #region Coroutines
+
+    private IEnumerator StartTaskAtTimestamp(float timestamp)
+    {
+        yield return new WaitForSeconds(timestamp);
+        
+    }
+    
+    private IEnumerator StartCatAtTimestamp(float timestamp)
+    {
+        yield return new WaitForSeconds(timestamp);
+        // TODO:
+    }
     
     private IEnumerator ActivateNextTask()
     {

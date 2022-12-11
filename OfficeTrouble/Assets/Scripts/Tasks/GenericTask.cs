@@ -10,6 +10,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] protected float stressIncrementPerTick;
     [SerializeField] private AudioPlayScript.SoundClip soundClip;
     [SerializeField] private string spriteName;
+    [SerializeField] public CatTaskInfo catTaskInfo;
+    
     
 
     protected bool TaskIsBeingDealtWith;
