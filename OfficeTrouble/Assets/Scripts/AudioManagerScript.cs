@@ -31,6 +31,7 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] private bool ModifyPitch;
     [SerializeField] private bool gameLost;
     [SerializeField] private bool gameStart;
+    [SerializeField] private float PauseVolume;
         
     [Range(0,1.0f)]public float panicLevel;
     private IValueChanged valueChangedEvent;
@@ -233,5 +234,28 @@ public class AudioManagerScript : MonoBehaviour
         }
 
     }
-    
+
+    public void PauseMusic()
+    {
+        if (_track1Playing)
+        {
+            _track1.volume = PauseVolume;
+        }
+        else
+        {
+            _track2.volume = PauseVolume;
+        }
+    }
+
+    public void UnPauseMusic()
+    {
+        if (_track1Playing)
+        {
+            _track1.volume = 1f;
+        }
+        else
+        {
+            _track2.volume = 1f;
+        }
+    }
 }
