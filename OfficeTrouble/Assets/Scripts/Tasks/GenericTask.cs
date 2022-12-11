@@ -30,7 +30,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     #endregion
 
-    private void Start()
+    protected void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
     }
@@ -42,9 +42,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
         if (!_initialDelayOver)
         {
             _passedSecondsSinceStart += Time.deltaTime;
-            if (_passedSecondsSinceStart > initalDelaySeconds)
-                _initialDelayOver = true;
-        }
+			if (_passedSecondsSinceStart > initalDelaySeconds)
+			{
+				_initialDelayOver = true;
+			}
+		}
         
         SpecificUpdate();
         

@@ -18,6 +18,11 @@ public class InputManager : MonoBehaviour
 
 	public bool KeyIsPressed(string key)
 	{
+		if (key == "Mouse0")
+		{
+			return Input.GetKey(KeyCode.Mouse0);
+		}
+		
 		bool uiKeyPressed = _uiKeyPressedDict.ContainsKey(key) && _uiKeyPressedDict[key];
 		return uiKeyPressed || ((KeyControl) Keyboard.current[key]).isPressed;
 	}
