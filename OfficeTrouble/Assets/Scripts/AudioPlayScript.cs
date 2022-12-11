@@ -29,6 +29,8 @@ public static class AudioPlayScript
         Unplug,
         Waterdrops,
         RickRoll,
+        CatScratch,
+        TapeFixing,
         LongTest,
     }
     
