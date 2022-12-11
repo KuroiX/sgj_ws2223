@@ -9,11 +9,16 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] protected float initalDelaySeconds;
     [SerializeField] protected float stressIncrementPerTick;
     [SerializeField] private AudioPlayScript.SoundClip soundClip;
+    [SerializeField] private string spriteName;
+    [SerializeField] public CatTaskInfo catTaskInfo;
+    
+    
 
     protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
     
     private StressMeter _stressMeter;
+    private TaskSprite _taskSprite;
     private bool _initialDelayOver;
     private float _passedSecondsSinceStart;
     private bool _lastKeyState;
@@ -34,7 +39,6 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
-        PlayTaskSound();
     }
 
     public void Update()
@@ -57,6 +61,11 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     {
         if (_initialDelayOver && !TaskIsBeingDealtWith)
             _stressMeter.IncreaseStressLevel(stressIncrementPerTick);
+    }
+
+    private void OnDestroy()
+    {
+        if (_taskSprite) _taskSprite.Deactivate();
     }
 
     private void HandleKeyState()
