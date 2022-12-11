@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        ScoreManager.Instance.score = Time.time;
         _activeTasks = new List<GenericTask>();
         _currentTaskIndex = 0;
         //if (sequence.tasks.Count > 0)
@@ -70,7 +71,8 @@ public class GameController : MonoBehaviour
 
 		if (StressMeter.IsGameLost())
 		{
-			Debug.Log("YOU LOST!");
+            ScoreManager.Instance.score = Time.time - ScoreManager.Instance.score;
+			Debug.Log("YOU LOST!" + ScoreManager.Instance.score);
             AudioManagerScript.Instance.GameIsLost();
             SceneManager.LoadScene("GameOver");
         }
