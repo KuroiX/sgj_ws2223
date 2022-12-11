@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SequentialTask : GenericTask
+public class SequentialTask : MonoBehaviour//GenericTask
 {
+    /*
     // Additional Parameters
     //[SerializeField] protected string keySequence;
 
@@ -87,5 +88,6 @@ public class SequentialTask : GenericTask
         _currentKey = _keys[_currentPosition];
         GetComponentInChildren<TextMeshProUGUI>().text = _currentKey.GetUIText().ToUpper();
     }
+    
 }
 */

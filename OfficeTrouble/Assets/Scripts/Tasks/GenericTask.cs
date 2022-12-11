@@ -8,6 +8,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] protected KeyWrapper key;
     [SerializeField] protected float initalDelaySeconds;
     [SerializeField] protected float stressIncrementPerTick;
+    [SerializeField] private AudioPlayScript.SoundClip soundClip;
     [SerializeField] private string spriteName;
     
 
@@ -18,8 +19,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private TaskSprite _taskSprite;
     private bool _initialDelayOver;
     private float _passedSecondsSinceStart;
-    private float _taskProgress;
     private bool _lastKeyState;
+    private float _taskProgress;
 
     #region Abstract Methods
 
@@ -36,15 +37,6 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
-        _taskSprite = GameObject.Find(spriteName).GetComponent<TaskSprite>();
-        if (_taskSprite)
-        {
-            _taskSprite.Activate();
-        }
-        else
-        {
-            Debug.LogError("TaskSprite with name " + spriteName + " not found!!!!!!!!! Press f :(");
-        }
     }
 
     public void Update()
@@ -120,6 +112,16 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
             ValueChanged?.Invoke(value);
             _taskProgress = value;
         }
+    }
+
+    private void PlayTaskSound()
+    {
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.clip = AudioPlayScript.GetAudioClip(soundClip);
+        //source.loop = true;
+        source.Play();
+        //AudioManagerScript.Instance.PlaySound(soundClip);
+
     }
 
 }
