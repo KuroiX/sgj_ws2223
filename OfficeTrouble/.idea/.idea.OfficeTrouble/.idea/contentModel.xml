@@ -6,7 +6,11 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Audioclips" t="Include" />
+        <e p="Audioclips" t="Include">
+          <e p="Soundeffects" t="Include">
+            <e p="Cat" t="Include" />
+          </e>
+        </e>
         <e p="Imported" t="Include">
           <e p="RotatingCursor" t="Include">
             <e p="Prefabs" t="Include" />
@@ -54,6 +58,7 @@
           </e>
         </e>
         <e p="Prefabs" t="Include">
+          <e p="Sprites" t="Include" />
           <e p="Tasks" t="Include">
             <e p="Sequence2" t="Include" />
             <e p="Sequence3" t="Include" />
@@ -70,6 +75,9 @@
           <e p="AudioPlayScript.cs" t="Include" />
           <e p="Cat" t="Include">
             <e p="AnnoyingCatFace.cs" t="Include" />
+          </e>
+          <e p="Cosmetics" t="Include">
+            <e p="DropAnimation.cs" t="Include" />
           </e>
           <e p="GameController.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />

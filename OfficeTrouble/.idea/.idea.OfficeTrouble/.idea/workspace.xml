@@ -20,6 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tasks/TestSequence/Task4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioPlayScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioPlayScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,11 +67,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/HoldTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SpamTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioAssets.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AudioPlayScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AudioPlayScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" />
       </list>
     </option>
   </component>
@@ -133,9 +141,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1612" y="-107" width="672" height="678" key="search.everywhere.popup" timestamp="1670708158408">
+    <state x="-1612" y="-107" width="672" height="678" key="search.everywhere.popup" timestamp="1670718620187">
       <screen x="-2560" y="-431" width="2560" height="1415" />
     </state>
+    <state x="-1612" y="-107" width="672" height="678" key="search.everywhere.popup/-2560.-431.2560.1415/0.25.1792.1023@-2560.-431.2560.1415" timestamp="1670718620187" />
     <state x="-1612" y="-107" width="672" height="678" key="search.everywhere.popup/-2560.-431.2560.1415/0.25.1792.1035@-2560.-431.2560.1415" timestamp="1670708158408" />
   </component>
 </project>

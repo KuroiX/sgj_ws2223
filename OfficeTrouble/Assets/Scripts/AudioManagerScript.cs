@@ -65,6 +65,7 @@ public class AudioManagerScript : MonoBehaviour
         _track2 = gameObject.AddComponent<AudioSource>();
         _track2.loop = true;
         _track1Playing = true;
+        //AudioSource.PlayClipAtPoint(AudioPlayScript.GetMusicClip(AudioPlayScript.MusicClip.TuneUp), Camera.main.transform.position);
 
     }
     public void Update()

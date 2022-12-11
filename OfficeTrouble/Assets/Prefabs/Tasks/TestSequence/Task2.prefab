@@ -176,6 +176,7 @@ MonoBehaviour:
   key: {fileID: 11400000, guid: 311db2384c0ea467fa6288d84dd61b62, type: 2}
   initalDelaySeconds: 2
   stressIncrementPerTick: 0.1
+  soundClip: 8
   numberToPress: 10
   allowedSecondBetweenPresses: 0.05
 --- !u!1 &103474641941572163

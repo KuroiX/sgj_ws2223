@@ -176,6 +176,7 @@ MonoBehaviour:
   key: {fileID: 11400000, guid: bbef0282e249442b5a548dbe5b720acb, type: 2}
   initalDelaySeconds: 2
   stressIncrementPerTick: 0.1
+  soundClip: 4
   holdDuration: 4
 --- !u!1 &103474641941572163
 GameObject:

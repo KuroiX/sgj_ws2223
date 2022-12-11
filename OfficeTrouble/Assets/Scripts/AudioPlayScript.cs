@@ -15,9 +15,21 @@ public static class AudioPlayScript
 
     public enum SoundClip
     {
-        Test1,
-        Test2,
-        Test3,
+        Cat,
+        CatEating,
+        CeilingFalling,
+        CloseCat,
+        CurtainFalling,
+        Door,
+        FlickeringLight,
+        GlassSpilled,
+        MergeConflict,
+        OhNo,
+        PicturesFalling,
+        Unplug,
+        Waterdrops,
+        RickRoll,
+        LongTest,
     }
     
     public enum MusicClip
@@ -25,13 +37,15 @@ public static class AudioPlayScript
         Calm,
         Medium,
         Panic,
+        TuneUp,
     }
 
     public static void PlaySound(SoundClip sound)
     {
-        GameObject soundGameObject = new GameObject("Sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(GetAudioClip(sound));
+        //GameObject soundGameObject = new GameObject("Sound");
+        //AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        //audioSource.PlayOneShot(GetAudioClip(sound));
+        AudioSource.PlayClipAtPoint(GetAudioClip(sound), Camera.main.transform.position);
     }
     
     /*public static void PlayMusic(MusicClip music)
@@ -43,7 +57,7 @@ public static class AudioPlayScript
     }*/
 
     
-    private static AudioClip GetAudioClip(SoundClip sound)
+    public static AudioClip GetAudioClip(SoundClip sound)
     {
         foreach (AudioManagerScript.SoundAudioClip soundAudioClip in AudioManagerScript.Instance.soundAudioClipArray)
         {

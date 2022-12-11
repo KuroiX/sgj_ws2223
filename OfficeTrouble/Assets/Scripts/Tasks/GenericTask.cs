@@ -34,6 +34,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
+        PlayTaskSound();
     }
 
     public void Update()
@@ -108,7 +109,12 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     private void PlayTaskSound()
     {
-        AudioManagerScript.Instance.PlaySound(soundClip);
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.clip = AudioPlayScript.GetAudioClip(soundClip);
+        //source.loop = true;
+        source.Play();
+        //AudioManagerScript.Instance.PlaySound(soundClip);
+
     }
 
 }
