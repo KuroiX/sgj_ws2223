@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManagerScript : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] private bool gameLost;
     [SerializeField] private bool gameStart;
     [SerializeField] private float PauseVolume;
+    [SerializeField] private AudioMixerGroup MusicMixer;
+    public AudioMixerGroup SoundEffectMixer;
         
     [Range(0,1.0f)]public float panicLevel;
     private IValueChanged valueChangedEvent;
@@ -63,8 +66,10 @@ public class AudioManagerScript : MonoBehaviour
 
         _track1 = gameObject.AddComponent<AudioSource>();
         _track1.loop = true;
+        _track1.outputAudioMixerGroup = MusicMixer;
         _track2 = gameObject.AddComponent<AudioSource>();
         _track2.loop = true;
+        _track2.outputAudioMixerGroup = MusicMixer;
         _track1Playing = true;
         //AudioSource.PlayClipAtPoint(AudioPlayScript.GetMusicClip(AudioPlayScript.MusicClip.TuneUp), Camera.main.transform.position);
 

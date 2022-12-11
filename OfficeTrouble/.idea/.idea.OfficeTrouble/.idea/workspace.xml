@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +63,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioAssets.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/SequentialTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioPlayScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioManagerScript.cs" />
       </list>
     </option>
