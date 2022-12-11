@@ -1,8 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField]
+    private TMP_Text textMeshPro;
+
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().name == "GameOver")
+        {
+            ManageTimer();
+        }
+    }
 
     [SerializeField] private GameObject canvas;
     
@@ -27,5 +38,11 @@ public class PauseMenu : MonoBehaviour
         this.GetComponentInChildren<Canvas>().enabled = false;
         canvas.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void ManageTimer()
+    {
+        double roundedScore = System.Math.Round(ScoreManager.Instance.score, 1);
+        textMeshPro.text = "" + roundedScore;
     }
 }
