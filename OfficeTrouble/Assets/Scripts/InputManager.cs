@@ -3,55 +3,49 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
-public class InputManager: MonoBehaviour
+public class InputManager : MonoBehaviour
 {
-    public static InputManager Instance;
 
-    [SerializeField]
-    private GameObject visual;
+	public static InputManager Instance;
 
-    private Dictionary<string, bool> uiKeyPressedDict;
+	private Dictionary<string, bool> _uiKeyPressedDict;
 
-    private void Awake()
-    {
-        Instance = this;
-        uiKeyPressedDict = new Dictionary<string, bool>();
-    }
+	private void Awake()
+	{
+		Instance = this;
+		_uiKeyPressedDict = new Dictionary<string, bool>();
+	}
+
+	public bool KeyIsPressed(string key)
+	{
+		bool uiKeyPressed = _uiKeyPressedDict.ContainsKey(key) && _uiKeyPressedDict[key];
+		return uiKeyPressed || ((KeyControl) Keyboard.current[key]).isPressed;
+	}
 
 
-    public void UIKeyPressed(string key)
-    {
-        if (uiKeyPressedDict.ContainsKey(key))
-        {
-            uiKeyPressedDict[key] = true;
-        }
-        else
-        {
-            uiKeyPressedDict.Add(key, true);
-        }
-    }
+	public void UIKeyPressed(string key)
+	{
+		if (_uiKeyPressedDict.ContainsKey(key))
+		{
+			_uiKeyPressedDict[key] = true;
+		}
+		else
+		{
+			_uiKeyPressedDict.Add(key, true);
+		}
+	}
 
-    public void UIKeyReleased(string key)
-    {
-        if (uiKeyPressedDict.ContainsKey(key))
-        {
-            uiKeyPressedDict[key] = false;
-        }
-        else
-        {
-            // should never happen!
-            uiKeyPressedDict.Add(key, true);
-        }
-    }
-
-    public bool KeyIsPressed(string key)
-    {
-        if (key == "")
-        {
-            Debug.Log("Warning: GameObject " + gameObject.name + " probably has a task script associated with no key name set!");
-        }
-        bool uiKeyPressed = uiKeyPressedDict.ContainsKey(key) && uiKeyPressedDict[key];
-        return uiKeyPressed || ((KeyControl)Keyboard.current[key]).isPressed;
-    }
+	public void UIKeyReleased(string key)
+	{
+		if (_uiKeyPressedDict.ContainsKey(key))
+		{
+			_uiKeyPressedDict[key] = false;
+		}
+		else
+		{
+			// should never happen!
+			_uiKeyPressedDict.Add(key, true);
+		}
+	}
 
 }
