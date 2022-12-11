@@ -64,6 +64,11 @@
         <e p="Prefabs" t="Include">
           <e p="Sprites" t="Include" />
           <e p="Tasks" t="Include">
+            <e p="ActualTasks" t="Include">
+              <e p="DragTasks" t="Include" />
+              <e p="HoldTasks" t="Include" />
+              <e p="SpamTasks" t="Include" />
+            </e>
             <e p="Sequence2" t="Include" />
             <e p="Sequence3" t="Include" />
             <e p="TestSequence" t="Include" />
@@ -73,7 +78,9 @@
         <e p="ScriptableObjects" t="Include">
           <e p="CatPaths" t="Include" />
           <e p="Keys" t="Include" />
-          <e p="Sequences" t="Include" />
+          <e p="Sequences" t="Include">
+            <e p="ActualSequence" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="AudioManagerScript.cs" t="Include" />
@@ -90,7 +97,6 @@
           <e p="DraggableObject.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
-          <e p="Items" t="Include" />
           <e p="IValueChanged.cs" t="Include" />
           <e p="KeyWrapper.cs" t="Include" />
           <e p="Menu.cs" t="Include" />
@@ -102,6 +108,7 @@
           <e p="Tasks" t="Include">
             <e p="CreateHoldTask.cs" t="Include" />
             <e p="CreateSpamTask.cs" t="Include" />
+            <e p="DragTask.cs" t="Include" />
             <e p="GenericTask.cs" t="Include" />
             <e p="HoldTask.cs" t="Include" />
             <e p="ITask.cs" t="Include" />

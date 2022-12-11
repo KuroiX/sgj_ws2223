@@ -35,6 +35,7 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] private float PauseVolume;
     [SerializeField] private AudioMixerGroup MusicMixer;
     public AudioMixerGroup SoundEffectMixer;
+    public AudioSource SoundEffects;
         
     [Range(0,1.0f)]public float panicLevel;
     private IValueChanged valueChangedEvent;

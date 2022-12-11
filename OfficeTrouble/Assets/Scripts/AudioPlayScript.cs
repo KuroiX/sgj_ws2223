@@ -47,7 +47,9 @@ public static class AudioPlayScript
         //GameObject soundGameObject = new GameObject("Sound");
         //AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         //audioSource.PlayOneShot(GetAudioClip(sound));
-        AudioSource.PlayClipAtPoint(GetAudioClip(sound), Camera.main.transform.position);
+        //AudioSource.PlayClipAtPoint(GetAudioClip(sound), Camera.main.transform.position);
+        if (_audioSource == null) _audioSource = AudioManagerScript.Instance.SoundEffects;
+        _audioSource.PlayOneShot(GetAudioClip(sound));
     }
     
     /*public static void PlayMusic(MusicClip music)
