@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,6 +11,12 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0;
             this.GetComponentInChildren<Canvas>().enabled = true;
         }
+    }
+
+    public void LoadScene(int i)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(i);
     }
 
     public void ResumeGame()
