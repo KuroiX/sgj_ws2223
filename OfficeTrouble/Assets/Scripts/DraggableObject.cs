@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DraggableObject : MonoBehaviour
 {
-
-	[SerializeField] public Vector2 offset;
 
 	private bool _hooked;
 
@@ -16,10 +13,12 @@ public class DraggableObject : MonoBehaviour
 	private GraphicRaycaster _raycaster;
 	private PointerEventData _pointerEventData;
 	private Vector3 _initialPosition;
+	private Vector3 _positionOffset;
 
 	private void Start()
 	{
 		_initialPosition = transform.parent.position;
+		_positionOffset = transform.position - transform.parent.position;
 		_eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 		_raycaster = GameObject.Find("Canvas").GetComponent<GraphicRaycaster>();
 	}
@@ -53,7 +52,7 @@ public class DraggableObject : MonoBehaviour
 
 		if (_hooked)
 		{
-			transform.parent.position = Input.mousePosition + (Vector3) offset;
+			transform.parent.position = Input.mousePosition - _positionOffset;
 		}
 	}
 
