@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6209879417210579628}
   - component: {fileID: -241156210386005500}
   m_Layer: 5
-  m_Name: MergeConflictTask
+  m_Name: PictureTask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 618, y: 512}
+  m_AnchoredPosition: {x: 228, y: 646}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6209879417210579628
@@ -177,14 +177,14 @@ MonoBehaviour:
   key: {fileID: 11400000, guid: 40588b66fc0f3434eb07e8d8005e2398, type: 2}
   initalDelaySeconds: 3
   stressIncrementPerTick: 0.1
-  soundClip: 8
+  soundClip: 10
   spriteName: 
   catTaskInfo:
-    catExists: 1
+    catExists: 0
     path: {fileID: 11400000, guid: 7e829edfaa4fc264c81854c841261fbe, type: 2}
     timeBeforeTask: 5
   RandomLoopSounds: 0
-  numberToPress: 10
+  numberToPress: 0
   allowedSecondBetweenPresses: 0.4
 --- !u!114 &-241156210386005500
 MonoBehaviour:
@@ -199,8 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activates:
-  - ScreenError
-  deactivates: []
+  - PictureBad
+  deactivates:
+  - PictureGood
 --- !u!1 &103474641941572163
 GameObject:
   m_ObjectHideFlags: 0
