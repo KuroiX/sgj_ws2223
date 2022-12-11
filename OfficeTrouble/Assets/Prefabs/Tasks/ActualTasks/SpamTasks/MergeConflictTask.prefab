@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: 40588b66fc0f3434eb07e8d8005e2398, type: 2}
-  initalDelaySeconds: 3
-  stressIncrementPerTick: 0.1
+  initalDelaySeconds: 0
+  stressIncrementPerTick: 0.5
   soundClip: 8
   spriteName: 
   catTaskInfo:

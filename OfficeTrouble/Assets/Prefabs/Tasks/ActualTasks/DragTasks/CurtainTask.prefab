@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: 3604f11fc2feb254db9913a2c4c7735a, type: 2}
-  initalDelaySeconds: 2
+  initalDelaySeconds: 1
   stressIncrementPerTick: 0.1
   soundClip: 4
   spriteName: 
@@ -62,9 +62,10 @@ MonoBehaviour:
     catExists: 1
     path: {fileID: 11400000, guid: f2995f79222f6244eb273321759383e1, type: 2}
     timeBeforeTask: 4
+  RandomLoopSounds: 0
   draggableObjectName: CurtainDown
   triggerName: CurtainTrigger
-  isTapeDragTask: 0
+  dragTaskId: 0
 --- !u!114 &2554782937605260980
 MonoBehaviour:
   m_ObjectHideFlags: 0

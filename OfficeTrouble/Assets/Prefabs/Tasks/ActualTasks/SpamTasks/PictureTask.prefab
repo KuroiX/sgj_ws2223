@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6348966f1524fe1ba0e3bff2cd546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: 40588b66fc0f3434eb07e8d8005e2398, type: 2}
-  initalDelaySeconds: 3
+  key: {fileID: 11400000, guid: a7a4ec2f6e3604c338c9af2940127f2d, type: 2}
+  initalDelaySeconds: 1
   stressIncrementPerTick: 0.1
   soundClip: 10
   spriteName: 

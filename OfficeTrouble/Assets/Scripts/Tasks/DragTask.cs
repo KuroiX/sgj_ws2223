@@ -7,7 +7,7 @@ public class DragTask : GenericTask
 	
 	[SerializeField] private string draggableObjectName;
 	[SerializeField] private string triggerName;
-	[SerializeField] private bool isTapeDragTask;	// true: is curtain task. False: is tape task.
+	[SerializeField] private int dragTaskId;	// true: is curtain task. False: is tape task.
 
 	private GameObject _draggableParent;
 	private GameObject _dragTargetTrigger;
@@ -31,7 +31,7 @@ public class DragTask : GenericTask
 		Vector3 targetPosition = _dragTargetTrigger.transform.position;
 		Vector3 currentPosition = _draggableParent.transform.GetChild(0).position;
 		float progress = 1 - Mathf.Min(1f, (targetPosition - currentPosition).magnitude / (targetPosition - _initialPosition).magnitude);
-		//Debug.Log("targetPos: " + targetPosition + ", currentPos: " + currentPosition + ", distance: " + (targetPosition - currentPosition).magnitude + ", full distance: " + (targetPosition - _initialPosition).magnitude + ", progress: " + progress);
+		Debug.Log("targetPos: " + targetPosition + ", currentPos: " + currentPosition + ", distance: " + (targetPosition - currentPosition).magnitude + ", full distance: " + (targetPosition - _initialPosition).magnitude + ", progress: " + progress);
 		return progress;
 	}
 
@@ -50,15 +50,20 @@ public class DragTask : GenericTask
 			{
 
 				string imageToDisable, imageToEnable;
-				if (isTapeDragTask)
+				if (dragTaskId == 0)
 				{
 					imageToEnable = "TapePipe";
 					imageToDisable = "";
 				}
-				else
+				else if (dragTaskId == 1)
 				{
 					imageToEnable = "CurtainUp";
 					imageToDisable = "CurtainDown";
+				} 
+				else
+				{
+					imageToEnable = "PlanksCeiling";
+					imageToDisable = "PlanksFloor";
 				}
 				GameObject.Find(imageToEnable).GetComponent<Image>().enabled = true;
 				GameObject objectToDisable = GameObject.Find(imageToDisable);
