@@ -176,13 +176,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: abb49fe92d0a64a37b0f017b150be461, type: 2}
   initalDelaySeconds: 1
-  stressIncrementPerTick: 0.5
+  stressIncrementPerTick: 0.2
   soundClip: 2
   spriteName: 
   catTaskInfo:
     catExists: 0
     path: {fileID: 0}
     timeBeforeTask: 0
+  RandomLoopSounds: 0
   holdDuration: 10
 --- !u!114 &-1306337003062972130
 MonoBehaviour:

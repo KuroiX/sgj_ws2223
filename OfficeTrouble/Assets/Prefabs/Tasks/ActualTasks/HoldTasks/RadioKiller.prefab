@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 189015429624238363}
   - component: {fileID: 5241458778651295309}
   m_Layer: 5
-  m_Name: RadioTask
+  m_Name: RadioKiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: f570ac21ea6c2437cb0f654be680a12b, type: 2}
   initalDelaySeconds: 0
-  stressIncrementPerTick: 0.1
+  stressIncrementPerTick: 0.2
   soundClip: 13
   spriteName: 
   catTaskInfo:
@@ -184,7 +184,7 @@ MonoBehaviour:
     path: {fileID: 0}
     timeBeforeTask: 0
   RandomLoopSounds: 0
-  holdDuration: 3
+  holdDuration: 5
 --- !u!114 &5241458778651295309
 MonoBehaviour:
   m_ObjectHideFlags: 0

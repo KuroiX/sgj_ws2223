@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private RectTransform canvasTransform;
     [SerializeField] private PanikBar panikBar;
     [SerializeField] private CatAnimator catAnimator;
+    private float _elapsedTime;
 
 
     public StressMeter StressMeter;
@@ -74,12 +75,24 @@ public class GameController : MonoBehaviour
             AudioManagerScript.Instance.GameIsLost();
             SceneManager.LoadScene("GameOver");
         }
-	}
+
+        _elapsedTime += Time.deltaTime;
+    }
 
     private void FixedUpdate()
     {
+        int multiplier = 1;
+        if (_elapsedTime > 1)
+        {
+            multiplier = 2;
+        }
+        else if (_elapsedTime > 2)
+        {
+            multiplier = 3;
+        }
+        
         if (_allTasksAreBeingDealtWith)
-            StressMeter.DecreaseStressLevel(StressDecayPerTick);
+            StressMeter.DecreaseStressLevel(StressDecayPerTick * multiplier);
     }
 
     #endregion
