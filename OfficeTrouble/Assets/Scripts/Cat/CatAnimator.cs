@@ -15,7 +15,7 @@ public class CatAnimator : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        PlayPath(testPath);
+        //PlayPath(testPath);
     }
 
     public void PlayPath(CatPath path)
