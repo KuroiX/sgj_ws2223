@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -47,7 +48,7 @@ public class DraggableObject : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.Mouse0))
 		{
 			_hooked = false;
-			ResetPosition();
+			StartCoroutine(ScheduleResetPosition());
 		}
 
 		if (_hooked)
@@ -55,7 +56,13 @@ public class DraggableObject : MonoBehaviour
 			transform.parent.position = Input.mousePosition + (Vector3) offset;
 		}
 	}
-	
+
+	private IEnumerator ScheduleResetPosition()
+	{
+		yield return null;
+		ResetPosition();
+	}
+
 	private void ResetPosition()
 	{
 		transform.parent.position = _initialPosition;

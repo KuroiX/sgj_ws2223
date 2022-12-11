@@ -313,6 +313,7 @@ MonoBehaviour:
   stressIncrementPerTick: 0.1
   draggableObjectName: TapeTable
   triggerName: PipeTrigger
+  isTapeDragTask: 1
 --- !u!1 &1707200084582916594
 GameObject:
   m_ObjectHideFlags: 0

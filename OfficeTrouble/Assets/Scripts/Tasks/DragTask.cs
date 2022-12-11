@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragTask : GenericTask
 {
 	
 	[SerializeField] private string draggableObjectName;
 	[SerializeField] private string triggerName;
+	[SerializeField] private bool isTapeDragTask;	// true: is curtain task. False: is tape task.
 
 	private GameObject _draggableObject;
 	private GameObject _dragTargetTrigger;
@@ -44,9 +46,29 @@ public class DragTask : GenericTask
 		if (TaskIsBeingDealtWith)
 		{
 			TaskIsBeingDealtWith = false;
-			Debug.Log("MAKE RAYCAST TARGET CODE! Object: " + draggableObjectName + ", target: " + triggerName);
 			if (CalculateTaskProgress() >= 0.8f)
+			{
+				
+				Debug.Log("TODO: MAKE TAPE OR CURTAIN FIX");
+				
+				string imageToDisable, imageToEnable;
+				if (isTapeDragTask)
+				{
+					imageToEnable = "TapePipe";
+					imageToDisable = "";
+				}
+				else
+				{
+					imageToEnable = "CurtainUp";
+					imageToDisable = "CurtainDown";
+				}
+				GameObject.Find(imageToEnable).GetComponent<Image>().enabled = true;
+				GameObject objectToDisable = GameObject.Find(imageToDisable);
+				if (objectToDisable)
+					objectToDisable.GetComponent<Image>().enabled = false;
+				
 				TaskFulfilled = true;
+			}
 		}
 	}
 
