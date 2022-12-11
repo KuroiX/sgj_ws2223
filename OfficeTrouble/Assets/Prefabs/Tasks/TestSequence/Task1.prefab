@@ -473,6 +473,11 @@ MonoBehaviour:
   initalDelaySeconds: 2
   stressIncrementPerTick: 0.1
   soundClip: 4
+  spriteName: 
+  catTaskInfo:
+    catExists: 1
+    path: {fileID: 11400000, guid: f2995f79222f6244eb273321759383e1, type: 2}
+    timeBeforeTask: 0
   holdDuration: 2
 --- !u!1 &5307936345732277106
 GameObject:

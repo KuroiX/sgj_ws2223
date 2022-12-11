@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1656, y: 996}
+  m_AnchoredPosition: {x: 1242, y: 770}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7718438906977724994
@@ -55,6 +55,12 @@ MonoBehaviour:
   key: {fileID: 11400000, guid: 3604f11fc2feb254db9913a2c4c7735a, type: 2}
   initalDelaySeconds: 2
   stressIncrementPerTick: 0.1
+  soundClip: 4
+  spriteName: 
+  catTaskInfo:
+    catExists: 0
+    path: {fileID: 0}
+    timeBeforeTask: 0
   draggableObjectName: CurtainDown
   triggerName: CurtainTrigger
 --- !u!1 &2221538200436163875

@@ -39,6 +39,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     protected void Start()
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
+        PlayTaskSound();
     }
 
     public void Update()
