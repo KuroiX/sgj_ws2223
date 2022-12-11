@@ -92,7 +92,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(StartTaskAtTimestamp(i, schedule.timeStamp));
             var task = schedule.task;
             var cat = task.catTaskInfo;
-            if (cat.catExists)
+            if (!ReferenceEquals(cat, null) && cat.catExists)
             {
                 StartCoroutine(StartCatAtTimestamp(i, schedule.timeStamp - cat.timeBeforeTask));
             }
