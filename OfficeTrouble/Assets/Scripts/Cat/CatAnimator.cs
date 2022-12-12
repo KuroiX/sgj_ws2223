@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class CatAnimator : MonoBehaviour
 {
+	
     [SerializeField] private float walkSpeed = 100;
     private List<Vector2> _queue;
     
@@ -17,15 +18,15 @@ public class CatAnimator : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        
-    }
+	}
 
     public void Start()
     {
         //PlayPath(testPath);
     }
 
-    public void PlayPath(CatPath path)
+	// ReSharper disable Unity.PerformanceAnalysis
+	public void PlayPath(CatPath path)
     {
         RectTransform rect = (RectTransform)transform;
         _queue = path.queue;
@@ -44,19 +45,25 @@ public class CatAnimator : MonoBehaviour
         
         while (true)
         {
-            if (i >= _queue.Count) break;
+			if (i >= _queue.Count) break;
+
+			string debugText = i + ": " + _queue[i].x + ", " + _queue[i].y;
+			//BuildDebugger.Instance.SetText(debugText);
+			
             RectTransform rect = (RectTransform)transform;
             
             var dir = (_queue[i] - new Vector2(rect.anchoredPosition.x, rect.anchoredPosition.y));
-            dir = dir.normalized;
+			dir = dir.normalized;
             if (dir.x > 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
+				//BuildDebugger.Instance.SetText(debugText + "\nTURN -1 (x = " + dir.x + ")");
             }
 
-            if (dir.x < 0)
+            else if (dir.x < 0)
             {
                 transform.localScale = new Vector3(1, 1, 1);
+				//BuildDebugger.Instance.SetText(debugText + "\nTURN 1 (x = " + dir.x + ")");
             }
             
 
@@ -64,7 +71,8 @@ public class CatAnimator : MonoBehaviour
             
             var dist = (_queue[i] - new Vector2(rect.anchoredPosition.x, rect.anchoredPosition.y));
 
-            if (dist.magnitude < 1f)
+			//BuildDebugger.SetText("Dest: " + _queue[i] + "\nPos: " + rect.anchoredPosition.x + ", " + rect.anchoredPosition.y + ", Dist: " + dist);
+            if (dist.magnitude < 2f)
             {
                 i++;
                 //Debug.Break();

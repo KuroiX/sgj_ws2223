@@ -9,7 +9,10 @@ public class Menu : MonoBehaviour
     public AudioClip tuneUp;
     public AudioSource music;
     public void LoadScene(int i)
-    {
+	{
+		GameObject playButton = GameObject.Find("Play"); 
+		if (playButton)
+			playButton.GetComponent<AnimatedPlayButton>().StopAllCoroutines();
         // Play Sound Effect
         music.Stop();
         AudioSource.PlayClipAtPoint(tuneUp, Camera.main.transform.position);

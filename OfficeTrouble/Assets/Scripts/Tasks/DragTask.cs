@@ -31,7 +31,7 @@ public class DragTask : GenericTask
 		Vector3 targetPosition = _dragTargetTrigger.transform.position;
 		Vector3 currentPosition = _draggableParent.transform.GetChild(0).position;
 		float progress = 1 - Mathf.Min(1f, (targetPosition - currentPosition).magnitude / (targetPosition - _initialPosition).magnitude);
-		Debug.Log("targetPos: " + targetPosition + ", currentPos: " + currentPosition + ", distance: " + (targetPosition - currentPosition).magnitude + ", full distance: " + (targetPosition - _initialPosition).magnitude + ", progress: " + progress);
+		//Debug.Log("targetPos: " + targetPosition + ", currentPos: " + currentPosition + ", distance: " + (targetPosition - currentPosition).magnitude + ", full distance: " + (targetPosition - _initialPosition).magnitude + ", progress: " + progress);
 		return progress;
 	}
 

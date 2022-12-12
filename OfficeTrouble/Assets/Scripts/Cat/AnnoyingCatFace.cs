@@ -31,11 +31,10 @@ public class AnnoyingCatFace : MonoBehaviour
 		if (_cative && !_catCurrentlyPresent)
 		{
 			float spawnValue = Random.Range(0f, 1f);
-			Debug.Log(spawnValue);
 			if (spawnValue <= SpawnProbability)
 			{
 				float otterValue = Random.Range(0f, 1f);
-				if (otterValue < OtterProbability)
+				if (otterValue <= OtterProbability)
 				{
 					GetComponent<Image>().sprite = otterFaceImage;
 				}

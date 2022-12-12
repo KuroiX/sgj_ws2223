@@ -1,4 +1,3 @@
-using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,7 +72,7 @@ public class GameController : MonoBehaviour
 		if (StressMeter.IsGameLost())
 		{
             ScoreManager.Instance.score = Time.time - ScoreManager.Instance.score;
-			Debug.Log("YOU LOST!" + ScoreManager.Instance.score);
+			Debug.Log("YOU LOST! " + ScoreManager.Instance.score);
             AudioManagerScript.Instance.GameIsLost();
             SceneManager.LoadScene("GameOver");
         }
