@@ -20,100 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0484add0-8c84-4b02-a53c-037880356bfc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Cat.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Cat.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/CatOverlay.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/CatOverlay.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/MasterMixer.mixer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/MasterMixer.mixer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_1.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_10.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_11.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_11.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_12.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_12.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_3.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_4.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_5.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_6.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_7.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_8.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/Cat/cat_9.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/MergeConflict.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/MergeConflict.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/catEating.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/catEating.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/catScratchingCarpet.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/catScratchingCarpet.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/ceilingFallingDown.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/ceilingFallingDown.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/closeCat_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/closeCat_1.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/closeCat_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/closeCat_2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/curtingFallingDown.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/curtingFallingDown.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/door.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/door.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/flickeringLight.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/flickeringLight.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/glassSpilled.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/glassSpilled.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/ohNo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/ohNo.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/picturesFallingDown.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/picturesFallingDown.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/radio_1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/radio_1.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/radio_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/radio_2.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/rickRoll.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/rickRoll.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/tapeFixing.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/tapeFixing.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/unplug.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/unplug.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/waterdrops.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/Soundeffects/waterdrops.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/calm_demo.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/calm_demo.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/catpanic.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/catpanic.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/mid-tension.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/mid-tension.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/panic_up.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audioclips/panic_up.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Schritt_6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Stehen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CatSprites/Catto_Animation_Stehen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OfficeTrouble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/ActualSequence/FinalSequence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sequences/ActualSequence/FinalSequence.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tasks/GenericTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/685c48cf8f0b48abb797275c046dda6a158a00/30/e2ff8690/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/685c48cf8f0b48abb797275c046dda6a158a00/53/7d8a6ebe/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cat/AnnoyingCatFace.cs" root0="FORCE_HIGHLIGHTING" />
@@ -175,23 +90,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Julian\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Julian\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Julian\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Julian\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Julian\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Julian\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/Build/1.1\OfficeTrouble.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build/1.0\OfficeTrouble.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Julian\Desktop\SGJWS2223\sgj_ws2223\OfficeTrouble\Build\1.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -250,6 +166,8 @@
       <workItem from="1670763385711" duration="176000" />
       <workItem from="1670865086152" duration="5681000" />
       <workItem from="1670871359759" duration="606000" />
+      <workItem from="1670886971109" duration="1142000" />
+      <workItem from="1670889652021" duration="1994000" />
     </task>
     <servers />
   </component>
