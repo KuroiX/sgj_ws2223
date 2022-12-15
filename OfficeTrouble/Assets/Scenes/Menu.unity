@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Strength: 1
-  Speed: 1
+  Delay: 0.88
 --- !u!1 &926951032
 GameObject:
   m_ObjectHideFlags: 0

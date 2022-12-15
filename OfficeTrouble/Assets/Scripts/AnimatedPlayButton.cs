@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AnimatedPlayButton : MonoBehaviour
 {
     public float Strength;
-    public float Speed;
+    public float Delay;
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class AnimatedPlayButton : MonoBehaviour
             for (int i = 0; i < 2; i++)
             {
                 // Zoom in
-                while (timer < 0.1f)
+                while (timer < Delay * 1f / 10f)
                 {
                     yield return new WaitForEndOfFrame();
                     timer += Time.deltaTime;
@@ -51,7 +53,7 @@ public class AnimatedPlayButton : MonoBehaviour
 
             transform.localScale = new Vector3(originalSize, originalSize);
 
-            yield return new WaitForSeconds(Speed);
+            yield return new WaitForSeconds(Delay * 9f / 10f);
         }
     }
 }
