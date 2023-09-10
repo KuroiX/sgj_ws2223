@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &103474640133012817
 CanvasRenderer:
@@ -67,8 +67,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3952941aae9753f4f80085f43b774c7a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103474641620794101}
   - component: {fileID: 6209879417210579628}
+  - component: {fileID: -241156210386005500}
   m_Layer: 5
   m_Name: MergeConflictTask
   m_TagString: Untagged
@@ -175,15 +176,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: 40588b66fc0f3434eb07e8d8005e2398, type: 2}
   initalDelaySeconds: 0
-  stressIncrementPerTick: 0.5
+  stressIncrementPerTick: 0.2
   soundClip: 8
   spriteName: 
   catTaskInfo:
     catExists: 0
-    path: {fileID: 0}
-    timeBeforeTask: 0
+    path: {fileID: 11400000, guid: 7e829edfaa4fc264c81854c841261fbe, type: 2}
+    timeBeforeTask: 5
+  RandomLoopSounds: 0
   numberToPress: 10
-  allowedSecondBetweenPresses: 0.05
+  allowedSecondBetweenPresses: 0.4
+--- !u!114 &-241156210386005500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103474641620794102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9852a06f11d64378a4ce7429ff9f662a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activates:
+  - ScreenError
+  deactivates: []
 --- !u!1 &103474641941572163
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.8, y: 2.4}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &103474641941572160
@@ -259,8 +276,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -277,13 +294,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

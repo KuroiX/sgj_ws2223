@@ -1,9 +1,9 @@
-using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private RectTransform canvasTransform;
     [SerializeField] private PanikBar panikBar;
     [SerializeField] private CatAnimator catAnimator;
+    private float _elapsedTime;
 
 
     public StressMeter StressMeter;
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        ScoreManager.Instance.score = Time.time;
         _activeTasks = new List<GenericTask>();
         _currentTaskIndex = 0;
         //if (sequence.tasks.Count > 0)
@@ -69,15 +71,29 @@ public class GameController : MonoBehaviour
 
 		if (StressMeter.IsGameLost())
 		{
-			Debug.Log("YOU LOST!");
+            ScoreManager.Instance.score = Time.time - ScoreManager.Instance.score;
+			Debug.Log("YOU LOST! " + ScoreManager.Instance.score);
             AudioManagerScript.Instance.GameIsLost();
-		}
-	}
+            SceneManager.LoadScene("GameOver");
+        }
+
+        _elapsedTime += Time.deltaTime;
+    }
 
     private void FixedUpdate()
     {
+        int multiplier = 1;
+        if (_elapsedTime > 1)
+        {
+            multiplier = 2;
+        }
+        else if (_elapsedTime > 2)
+        {
+            multiplier = 3;
+        }
+        
         if (_allTasksAreBeingDealtWith)
-            StressMeter.DecreaseStressLevel(StressDecayPerTick);
+            StressMeter.DecreaseStressLevel(StressDecayPerTick * multiplier);
     }
 
     #endregion

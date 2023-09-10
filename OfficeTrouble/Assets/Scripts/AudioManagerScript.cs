@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManagerScript : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class AudioManagerScript : MonoBehaviour
     }
     #endregion
 
-    private AudioPlayScript.MusicClip _currentMusic = AudioPlayScript.MusicClip.Medium;
+    private AudioPlayScript.MusicClip _currentMusic = AudioPlayScript.MusicClip.Panic;
     private AudioSource _track1, _track2;
     private bool _track1Playing = true;
     
@@ -32,6 +33,9 @@ public class AudioManagerScript : MonoBehaviour
     [SerializeField] private bool gameLost;
     [SerializeField] private bool gameStart;
     [SerializeField] private float PauseVolume;
+    [SerializeField] private AudioMixerGroup MusicMixer;
+    public AudioMixerGroup SoundEffectMixer;
+    public AudioSource SoundEffects;
         
     [Range(0,1.0f)]public float panicLevel;
     private IValueChanged valueChangedEvent;
@@ -40,7 +44,7 @@ public class AudioManagerScript : MonoBehaviour
     public class SoundAudioClip
     {
         public AudioPlayScript.SoundClip sound;
-        public AudioClip audioClip;
+        public AudioClip[] audioClip;
     }
     
     [System.Serializable]
@@ -63,8 +67,10 @@ public class AudioManagerScript : MonoBehaviour
 
         _track1 = gameObject.AddComponent<AudioSource>();
         _track1.loop = true;
+        _track1.outputAudioMixerGroup = MusicMixer;
         _track2 = gameObject.AddComponent<AudioSource>();
         _track2.loop = true;
+        _track2.outputAudioMixerGroup = MusicMixer;
         _track1Playing = true;
         //AudioSource.PlayClipAtPoint(AudioPlayScript.GetMusicClip(AudioPlayScript.MusicClip.TuneUp), Camera.main.transform.position);
 
@@ -84,20 +90,20 @@ public class AudioManagerScript : MonoBehaviour
             gameStart = false;
             return;
         }
-        if (panicLevel < 0.30f)
-        {
-            PlayMusic(AudioPlayScript.MusicClip.Calm);
-        } 
-        else if (panicLevel > 0.40f && panicLevel < 0.60f)
+        if (panicLevel < 0.40f)
         {
             PlayMusic(AudioPlayScript.MusicClip.Medium);
-        }
-        else if (panicLevel > 0.70f && panicLevel < 1.0f)
+        } 
+        else if (panicLevel > 0.60f )
         {
             PlayMusic(AudioPlayScript.MusicClip.Panic);
         }
+        /*else if (panicLevel > 0.70f && panicLevel < 1.0f)
+        {
+            PlayMusic(AudioPlayScript.MusicClip.Panic);
+        }*/
 
-        if (ModifyPitch)
+        /*if (ModifyPitch)
         {
             float pitch = 0.0f;
             switch (_currentMusic)
@@ -115,7 +121,7 @@ public class AudioManagerScript : MonoBehaviour
             //float pitch = ((panicLevel % 0.335f) * 3) + 0.5f;
             _track1.pitch = pitch;
             _track2.pitch = pitch;
-        }
+        }*/
     }
 
     private void PlayMusic(AudioPlayScript.MusicClip music)

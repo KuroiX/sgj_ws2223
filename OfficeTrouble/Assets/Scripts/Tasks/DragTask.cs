@@ -7,7 +7,7 @@ public class DragTask : GenericTask
 	
 	[SerializeField] private string draggableObjectName;
 	[SerializeField] private string triggerName;
-	[SerializeField] private bool isTapeDragTask;	// true: is curtain task. False: is tape task.
+	[SerializeField] private int dragTaskId;	// true: is curtain task. False: is tape task.
 
 	private GameObject _draggableParent;
 	private GameObject _dragTargetTrigger;
@@ -50,15 +50,20 @@ public class DragTask : GenericTask
 			{
 
 				string imageToDisable, imageToEnable;
-				if (isTapeDragTask)
+				if (dragTaskId == 0)
 				{
 					imageToEnable = "TapePipe";
 					imageToDisable = "";
 				}
-				else
+				else if (dragTaskId == 1)
 				{
 					imageToEnable = "CurtainUp";
 					imageToDisable = "CurtainDown";
+				} 
+				else
+				{
+					imageToEnable = "PlanksCeiling";
+					imageToDisable = "PlanksFloor";
 				}
 				GameObject.Find(imageToEnable).GetComponent<Image>().enabled = true;
 				GameObject objectToDisable = GameObject.Find(imageToDisable);

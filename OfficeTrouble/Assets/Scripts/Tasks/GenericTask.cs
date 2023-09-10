@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
@@ -11,18 +12,20 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     [SerializeField] private AudioPlayScript.SoundClip soundClip;
     [SerializeField] private string spriteName;
     [SerializeField] public CatTaskInfo catTaskInfo;
+    private TaskSprite _taskSprite;
     
     
+    [SerializeField] private bool RandomLoopSounds = false; 
 
     protected bool TaskIsBeingDealtWith;
     protected bool TaskFulfilled;
     
     private StressMeter _stressMeter;
-    private TaskSprite _taskSprite;
     private bool _initialDelayOver;
     private float _passedSecondsSinceStart;
     private bool _lastKeyState;
     private float _taskProgress;
+    private float _elapsedTimeSinceStart;
 
     #region Abstract Methods
 
@@ -40,6 +43,8 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     {
         _stressMeter = GameObject.Find("GameController").GetComponent<GameController>().StressMeter;
         PlayTaskSound();
+        _taskSprite = GetComponent<TaskSprite>();
+		if (_taskSprite) _taskSprite.Activate(true);
     }
 
     public void Update()
@@ -68,7 +73,7 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
 
     private void OnDestroy()
     {
-        if (_taskSprite) _taskSprite.Deactivate();
+        if (_taskSprite) _taskSprite.Activate(false);
     }
 
     private void HandleKeyState()
@@ -122,11 +127,9 @@ public abstract class GenericTask : MonoBehaviour, ITask, IValueChanged
     private void PlayTaskSound()
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.outputAudioMixerGroup = AudioManagerScript.Instance.SoundEffectMixer;
         source.clip = AudioPlayScript.GetAudioClip(soundClip);
-        //source.loop = true;
         source.Play();
-        //AudioManagerScript.Instance.PlaySound(soundClip);
-
     }
 
 }

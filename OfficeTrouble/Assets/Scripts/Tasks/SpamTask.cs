@@ -28,7 +28,7 @@ public class SpamTask : GenericTask
         
         TaskIsBeingDealtWith = true;
         
-        if (_numberPressed > numberToPress)
+        if (_numberPressed >= numberToPress)
             TaskFulfilled = true;
     }
 
